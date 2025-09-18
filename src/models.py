@@ -58,7 +58,9 @@ class Timeframe(BaseModel):
 class ParsedPrediction(BaseModel):
     """A prediction related to the value of a cryptocurrency"""
 
-    extracted_value: TargetPrice | PercentageChange | Range | Ranking | None
+    extracted_value: TargetPrice | PercentageChange | Range | Ranking | None = Field(
+        description="The prediction extracted values"
+    )
     bear_bull: int = Field(
         ge=-100,
         le=100,
