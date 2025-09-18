@@ -54,7 +54,7 @@ class Timeframe(BaseModel):
     )
 
 
-class Prediction(BaseModel):
+class ParsedPrediction(BaseModel):
     """A prediction related to the value of a cryptocurrency"""
 
     target_type: Literal["target_price", "pct_change", "range", "ranking", "none"] = (
@@ -71,6 +71,6 @@ class Prediction(BaseModel):
     notes: list[str] = Field(description="Reasoning for parsing decisions")
 
 
-class Input(BaseModel):
+class NaturalLanguagePrediction(BaseModel):
     post_text: str = Field(description="The text of the tweet")
     post_created_at: datetime = Field(description="Creation date of the tweet")
