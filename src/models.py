@@ -45,7 +45,7 @@ class Timeframe(BaseModel):
     """The timeframe where the prediction is valid"""
 
     explicit: bool = Field(
-        description="Wether the tweet defines an explicit timeframe for the prediction or not"
+        description="Wether the post defines an explicit timeframe for the prediction or not"
     )
     start: datetime | None = Field(
         None, description="The start timestamp of the prediciton"
@@ -64,7 +64,7 @@ class ParsedPrediction(BaseModel):
     bear_bull: int = Field(
         ge=-100,
         le=100,
-        description="An assesment of the tweet sentiment, ranging from -100 (very bearish) to 100 (very bullish)",
+        description="An assesment of the post sentiment, ranging from -100 (very bearish) to 100 (very bullish)",
     )
     timeframe: Timeframe = Field(
         description="The timeframe where the prediction is valid"
@@ -82,5 +82,5 @@ class ParsedPredictionResponse:
 
 
 class NaturalLanguagePrediction(BaseModel):
-    post_text: str = Field(description="The text of the tweet")
-    post_created_at: datetime = Field(description="Creation date of the tweet")
+    post_text: str = Field(description="The text of the post")
+    post_created_at: datetime = Field(description="Creation date of the post")

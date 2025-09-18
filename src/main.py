@@ -17,7 +17,7 @@ app = FastAPI()
 async def parse_prediction(
     input: NaturalLanguagePrediction,
 ) -> ParsedPredictionResponse:
-    input_text = f"Tweet: '{input.post_text}'\nCreated at: {input.post_created_at}"
+    input_text = f"Post: '{input.post_text}'\nCreated at: {input.post_created_at}"
     response = await agent.run(input_text)
 
     print(response)

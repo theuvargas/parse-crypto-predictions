@@ -12,6 +12,7 @@ instructions = (
     "- Assumptions: For each of your assumptions and nomalization "
     "decisions, should make a new single-phrase entry in the 'notes'"
     "list.\n\n"
+    "Examples:\n\n"
 )
 
 agent = Agent(
