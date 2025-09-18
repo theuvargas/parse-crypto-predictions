@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from typing import Literal
 from pydantic import BaseModel, Field
 from datetime import datetime
@@ -57,9 +58,7 @@ class Timeframe(BaseModel):
 class ParsedPrediction(BaseModel):
     """A prediction related to the value of a cryptocurrency"""
 
-    target_type: Literal["target_price", "pct_change", "range", "ranking", "none"] = (
-        Field(description="The type of prediction made")
-    )
+    extracted_value: TargetPrice | PercentageChange | Range | Ranking | None
     bear_bull: int = Field(
         ge=-100,
         le=100,
@@ -69,6 +68,15 @@ class ParsedPrediction(BaseModel):
         description="The timeframe where the prediction is valid"
     )
     notes: list[str] = Field(description="Reasoning for parsing decisions")
+
+
+@dataclass
+class ParsedPredictionResponse:
+    target_type: Literal["target_price", "pct_change", "range", "ranking", "none"]
+    extracted_value: TargetPrice | PercentageChange | Range | Ranking | None
+    bear_bull: int
+    timeframe: Timeframe
+    notes: list[str]
 
 
 class NaturalLanguagePrediction(BaseModel):
