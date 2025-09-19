@@ -10,19 +10,24 @@ Created at: 2025-08-25T12:00:00Z"
 
 Output:
 {
-  "target_type": "none",
+  "target_type": "ranking",
+  "extracted_value": {
+    "asset": "PEPE",
+    "ranking": 10,
+    "currency": "USD"
+  },
   "timeframe": {
     "explicit": false,
     "start": null,
     "end": null
   },
-  "bear_bull": -20,
+  "bear_bull": 65,
   "notes": [
-    "No measurable prediction made",
-    "Retweet with additional commentary by @former_crypto_bull",
-    "General market volatility observation only",
-    "Slight negative sentiment due to uncertainty and anti-prediction stance",
-    "Shrugging emoji indicates resignation/uncertainty"
+    "Market cap ranking assumed",
+    "This cycle is vague timeframe",
+    "Quote tweet disagreeing with @bearish_analyst's bearish prediction",
+    "Frog and diamond emojis indicate strong bullish sentiment",
+    "USD market cap ranking context"
   ]
 }
 
@@ -50,17 +55,48 @@ Output:
     "Assumed USD currency"
   ]
 }
+
+"Post: 'ETH consolidating between $3,200-$3,800 next month. Chart analysis attached 📊',
+post_created_at": "2025-08-25T12:00:00Z"
+
+Output:
+{
+  "target_type": "range",
+  "extracted_range": {
+    "asset": "ETH",
+    "min": 3200,
+    "max": 3800,
+    "currency": "USD"
+  },
+  "timeframe": {
+    "explicit": true,
+    "start": "2025-08-25T12:00:00Z",
+    "end": "2025-09-25T23:59:59Z"
+  },
+  "bear_bull": 15,
+  "notes": [
+    "Next month calculated from post date",
+    "Chart analysis image attached - technical analysis basis",
+    "Consolidation suggests neutral-to-slightly-bullish sentiment",
+    "Assumed USD currency"
+  ]
+}
 """
 
 instructions = (
     "You are an expert in cryptocurrency and general trading jargon. "
     "Your objective is to extract information from crypto-related "
-    "predictions in natural language into parseable JSON data.\n\n"
-    "Instructions:\n\n"
+    "predictions in natural language into parseable JSON data."
+    "\n\n"
+    "Instructions:"
+    "\n\n"
     "- Dates: Any extracted date must be in the UTC ISO4601 format"
     "- Assumptions: For each of your assumptions and normalization "
     "decisions, should make a new single-phrase entry in the 'notes' "
-    "list.\n\n"
+    "list"
+    "- If the user doesn't specify the start of the timeframe, consider "
+    "the post creation date as the start"
+    "\n\n"
     f"Examples:\n\n{few_shot}"
 )
 

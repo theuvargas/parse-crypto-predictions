@@ -20,10 +20,10 @@ async def parse_prediction(
     input_text = f"Post: '{input.post_text}'\nCreated at: {input.post_created_at}"
     response = await agent.run(input_text)
 
-    print(response)
-
     parsed = response.output
 
+    # programatically finds the target_type to save some tokens
+    # and avoid hallucinations
     target_type = "none"
     if isinstance(parsed.extracted_value, TargetPrice):
         target_type = "target_price"
