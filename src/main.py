@@ -1,6 +1,6 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from .agent import agent, model_name
+from .agent import agent
 from .models import (
     NaturalLanguagePrediction,
     ParsedPredictionResponse,
@@ -11,6 +11,7 @@ from .models import (
 )
 import uvicorn
 from .database import init_db, log_token_usage
+from .config import model_name
 
 
 @asynccontextmanager

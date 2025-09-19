@@ -1,6 +1,7 @@
 from pydantic_ai import Agent
 from dotenv import load_dotenv
 from .models import ParsedPrediction
+from . import config
 
 load_dotenv()
 
@@ -127,12 +128,9 @@ instructions = (
     f"Examples:\n\n{few_shot}"
 )
 
-provider = "google-gla"
-model_name = "gemini-2.5-flash"
-
 agent = Agent(
-    f"{provider}:{model_name}",
+    f"{config.provider}:{config.model_name}",
     output_type=ParsedPrediction,
     instructions=instructions,
-    model_settings={"temperature": 0.3},
+    model_settings=config.model_settings,
 )
