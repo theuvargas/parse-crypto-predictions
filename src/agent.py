@@ -27,7 +27,6 @@ Output:
   "notes": [
     "Market cap ranking assumed",
     "This cycle is vague timeframe",
-    "Quote tweet disagreeing with @bearish_analyst's bearish prediction",
     "Frog and diamond emojis indicate strong bullish sentiment",
     "USD market cap ranking context"
   ]
