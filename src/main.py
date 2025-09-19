@@ -1,5 +1,6 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
-from .agent import agent
+from .agent import agent, model_name
 from .models import (
     NaturalLanguagePrediction,
     ParsedPredictionResponse,
@@ -9,8 +10,16 @@ from .models import (
     TargetPrice,
 )
 import uvicorn
+from .database import init_db, log_token_usage
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
+
+
+app = FastAPI(lifespan=lifespan)
 
 
 @app.post("/parse_prediction", response_model=ParsedPredictionResponse)
@@ -33,6 +42,13 @@ async def parse_prediction(
         target_type = "range"
     elif isinstance(parsed.extracted_value, Ranking):
         target_type = "ranking"
+
+    usage = response.usage()
+    log_token_usage(
+        model_name=model_name,
+        input_tokens=usage.input_tokens,
+        output_tokens=usage.output_tokens,
+    )
 
     return ParsedPredictionResponse(
         target_type=target_type,

@@ -127,8 +127,11 @@ instructions = (
     f"Examples:\n\n{few_shot}"
 )
 
+provider = "google-gla"
+model_name = "gemini-2.5-flash"
+
 agent = Agent(
-    "google-gla:gemini-2.5-pro",
+    f"{provider}:{model_name}",
     output_type=ParsedPrediction,
     instructions=instructions,
     model_settings={"temperature": 0.3},
