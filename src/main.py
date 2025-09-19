@@ -49,6 +49,9 @@ async def parse_prediction(
         model_name=model_name,
         input_tokens=usage.input_tokens,
         output_tokens=usage.output_tokens,
+        requests=usage.requests,
+        cache_read_tokens=usage.cache_read_tokens,
+        cache_write_tokens=usage.cache_write_tokens,
     )
 
     return ParsedPredictionResponse(
