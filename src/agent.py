@@ -60,7 +60,7 @@ Output:
 
 Input:
 "Post: 'ETH consolidating between $3,200-$3,800 next month. Chart analysis attached 📊',
-post_created_at": "2025-08-25T12:00:00Z"
+Created at": "2025-08-25T12:00:00Z"
 
 Output:
 {
@@ -84,6 +84,31 @@ Output:
     "Assumed USD currency"
   ]
 }
+
+Input:
+"Post: 'ADA will touch $10 when my grandmother finally understands what blockchain is'
+Created at: 2025-09-11T16:02:14.745983Z"
+
+Output:
+{
+  "target_type": "target_price",
+  "extracted_value": {
+    "asset": "ADA",
+    "currency": "USD",
+    "price": 10
+  },
+  "bear_bull": -30,
+  "timeframe": {
+    "explicit": false,
+    "start": null,
+    "end": null
+  },
+  "notes": [
+    "Sarcastic post implies the event is unlikely",
+    "Sarcasm implies bearish sentiment",
+    "Timeframe is indefinite and conditional"
+  ]
+}
 """
 
 instructions = (
@@ -103,7 +128,7 @@ instructions = (
 )
 
 agent = Agent(
-    "google-gla:gemini-2.5-flash",
+    "google-gla:gemini-2.5-pro",
     output_type=ParsedPrediction,
     instructions=instructions,
     model_settings={"temperature": 0.3},
