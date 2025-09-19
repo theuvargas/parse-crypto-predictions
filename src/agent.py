@@ -5,6 +5,7 @@ from .models import ParsedPrediction
 load_dotenv()
 
 few_shot = """
+Input:
 "Post: 'Disagree with this take. PEPE will crack top 10 by market cap this cycle, not crash 🐸💎'
 Created at: 2025-08-25T12:00:00Z"
 
@@ -31,6 +32,7 @@ Output:
   ]
 }
 
+Input:
 "Post: 'RT @sol_predictions: SOL down 40% from here, bear market incoming 📉'
 Created at: 2025-08-25T12:00:00Z"
 
@@ -56,6 +58,7 @@ Output:
   ]
 }
 
+Input:
 "Post: 'ETH consolidating between $3,200-$3,800 next month. Chart analysis attached 📊',
 post_created_at": "2025-08-25T12:00:00Z"
 
@@ -92,8 +95,7 @@ instructions = (
     "\n\n"
     "- Dates: Any extracted date must be in the UTC ISO4601 format"
     "- Assumptions: For each of your assumptions and normalization "
-    "decisions, should make a new single-phrase entry in the 'notes' "
-    "list"
+    "decisions, make a new single-phrase entry in the 'notes' list"
     "- If the user doesn't specify the start of the timeframe, consider "
     "the post creation date as the start"
     "\n\n"
