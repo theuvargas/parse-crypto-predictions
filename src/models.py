@@ -59,7 +59,7 @@ class ParsedPrediction(BaseModel):
     """A prediction related to the value of a cryptocurrency"""
 
     extracted_value: TargetPrice | PercentageChange | Range | Ranking | None = Field(
-        description="The prediction extracted values"
+        description="The prediction extracted values or None"
     )
     bear_bull: int = Field(
         ge=-100,

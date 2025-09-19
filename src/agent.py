@@ -7,28 +7,27 @@ load_dotenv()
 
 few_shot = """
 Input:
-"Post: 'Disagree with this take. PEPE will crack top 10 by market cap this cycle, not crash 🐸💎'
+"Post: 'BTC breaking $80,000 before end of year! 🚀',
 Created at: 2025-08-25T12:00:00Z"
 
 Output:
 {
-  "target_type": "ranking",
   "extracted_value": {
-    "asset": "PEPE",
-    "ranking": 10,
+    "asset": "BTC",
+    "price": 80000,
     "currency": "USD"
   },
   "timeframe": {
-    "explicit": false,
-    "start": null,
-    "end": null
+    "explicit": true,
+    "start": "2025-08-25T12:00:00Z",
+    "end": "2025-12-31T23:59:59Z"
   },
-  "bear_bull": 65,
+  "bear_bull": 78,
   "notes": [
-    "Market cap ranking assumed",
-    "This cycle is vague timeframe",
-    "Frog and diamond emojis indicate strong bullish sentiment",
-    "USD market cap ranking context"
+    "End of year converted to December 31st",
+    "Assumed USD currency",
+    "Quote tweet - prediction attributed to @crypto_bull_2024",
+    "Rocket emoji indicates high bullish sentiment"
   ]
 }
 
@@ -38,7 +37,6 @@ Created at: 2025-08-25T12:00:00Z"
 
 Output:
 {
-  "target_type": "pct_change",
   "extracted_value": {
     "asset": "SOL",
     "percentage": -40,
@@ -64,7 +62,6 @@ Created at": "2025-08-25T12:00:00Z"
 
 Output:
 {
-  "target_type": "range",
   "extracted_range": {
     "asset": "ETH",
     "min": 3200,
@@ -86,27 +83,48 @@ Output:
 }
 
 Input:
-"Post: 'ADA will touch $10 when my grandmother finally understands what blockchain is'
-Created at: 2025-09-11T16:02:14.745983Z"
+"Post: 'Disagree with this take. PEPE will crack top 10 by market cap this cycle, not crash 🐸💎'
+Created at: 2025-08-25T12:00:00Z"
 
 Output:
 {
-  "target_type": "target_price",
   "extracted_value": {
-    "asset": "ADA",
-    "currency": "USD",
-    "price": 10
+    "asset": "PEPE",
+    "ranking": 10,
+    "currency": "USD"
   },
-  "bear_bull": -30,
   "timeframe": {
     "explicit": false,
     "start": null,
     "end": null
   },
+  "bear_bull": 65,
   "notes": [
-    "Sarcastic post implies the event is unlikely",
-    "Sarcasm implies bearish sentiment",
-    "Timeframe is indefinite and conditional"
+    "Market cap ranking assumed",
+    "This cycle is vague timeframe",
+    "Frog and diamond emojis indicate strong bullish sentiment",
+    "USD market cap ranking context"
+  ]
+}
+
+Input
+"Post: 'RT @market_news: Crypto market volatility hits new highs this week. This is exactly why I don't make predictions anymore 🤷‍♂️',
+Created at: 2025-08-25T12:00:00Z"
+
+Output:
+{
+  "timeframe": {
+    "explicit": false,
+    "start": null,
+    "end": null
+  },
+  "bear_bull": -20,
+  "notes": [
+    "No measurable prediction made",
+    "Retweet with additional commentary by @former_crypto_bull",
+    "General market volatility observation only",
+    "Slight negative sentiment due to uncertainty and anti-prediction stance",
+    "Shrugging emoji indicates resignation/uncertainty"
   ]
 }
 """
@@ -121,8 +139,10 @@ instructions = (
     "- Dates: Any extracted date must be in the UTC ISO4601 format"
     "- Assumptions: For each of your assumptions and normalization "
     "decisions, make a new single-phrase entry in the 'notes' list"
-    "- If the user doesn't specify the start of the timeframe, consider "
-    "the post creation date as the start"
+    "- This is social media content, beware of sarcasm and irony"
+    "- When a single post contains multiple classes of predictions "
+    "(e.g. a ranking and a target value) choose the boldest prediction "
+    "as the class."
     "\n\n"
     f"Examples:\n\n{few_shot}"
 )

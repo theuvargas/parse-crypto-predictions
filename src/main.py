@@ -27,7 +27,7 @@ app = FastAPI(lifespan=lifespan)
 async def parse_prediction(
     input: NaturalLanguagePrediction,
 ) -> ParsedPredictionResponse:
-    input_text = f"Post: '{input.post_text}'\nCreated at: {input.post_created_at}"
+    input_text = f"Input:\nPost: '{input.post_text}'\nCreated at: {input.post_created_at}\n\nOutput:\n"
     response = await agent.run(input_text)
 
     parsed = response.output
