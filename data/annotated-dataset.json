@@ -1,0 +1,1974 @@
+[
+  {
+    "post_text": "BTC breaking $100k before Christmas! Mark my words",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "BTC",
+      "price": 100000,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2022-09-20T14:30:00Z",
+      "end": "2022-12-25T00:00:00Z"
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD currency.",
+      "Christmas is interpreted as the beginning of December 25th."
+    ],
+    "id": 0,
+    "post_created_at": "2022-09-20T14:30:00Z"
+  },
+  {
+    "post_text": "Ethereum will crash to $800 within the next 6 months",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "ETH",
+      "price": 800,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T09:15:00Z",
+      "end": "2025-06-01T09:15:00Z"
+    },
+    "bear_bull": -85,
+    "notes": [
+      "Assumed USD currency.",
+      "Timeframe calculated as 6 months from the post date."
+    ],
+    "id": 1,
+    "post_created_at": "2024-12-01T09:15:00Z"
+  },
+  {
+    "post_text": "Solana $SOL rejected again. Buy the dip at $176 or the breakout at $207. Target stays $300.",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "SOL",
+      "price": 300,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 20,
+    "notes": [
+      "Assumed USD currency.",
+      "The post mentions buy prices, but the primary prediction is the target price."
+    ],
+    "id": 2,
+    "post_created_at": "2025-09-11T16:02:14.745835Z"
+  },
+  {
+    "post_text": "$SOL will soon regain its bullish momentum? Looking to buy a lot if it dips to an OB/BPR level around $182. According to the LTF confirmations we get, this would be a good buying area. Eyes open",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 25,
+    "notes": [
+      "This is not a specific prediction, but rather a trading plan.",
+      "The sentiment is bullish, but without a concrete target."
+    ],
+    "id": 3,
+    "post_created_at": "2025-09-11T16:02:14.745977Z"
+  },
+  {
+    "post_text": "This time, ETHEREUM is coming to break $5,000 Believe in somETHing",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "ETH",
+      "price": 5000,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 4,
+    "post_created_at": "2025-09-11T16:02:14.745980Z"
+  },
+  {
+    "post_text": "DOGE hitting $2.50 when my ex finally texts me back (never)",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -50,
+    "notes": [
+      "This is a sarcastic post, implying the price target will never be reached."
+    ],
+    "id": 5,
+    "post_created_at": "2025-09-11T16:02:14.745981Z"
+  },
+  {
+    "post_text": "PEPE hitting $0.001 by Valentine's Day. Love is in the air and so are meme coins",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "PEPE",
+      "price": 0.001,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-02-14T00:00:00Z"
+    },
+    "bear_bull": 75,
+    "notes": [
+      "Assumed USD currency.",
+      "Valentine's Day is interpreted as the beginning of February 14th of the next year."
+    ],
+    "id": 6,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "XRP going to zero. Absolutely worthless by summer",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "XRP",
+      "price": 0,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-06-21T00:00:00Z"
+    },
+    "bear_bull": -100,
+    "notes": [
+      "Assumed USD currency.",
+      "Summer is interpreted as starting on June 21st."
+    ],
+    "id": 7,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "ADA will touch $10 when my grandmother finally understands what blockchain is",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "This is a sarcastic post, implying the event is unlikely to happen."
+    ],
+    "id": 8,
+    "post_created_at": "2025-09-11T16:02:14.745983Z"
+  },
+  {
+    "post_text": "AVAX $200 EOY or I quit trading forever",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "AVAX",
+      "price": 200,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2024-12-31T23:59:59Z"
+    },
+    "bear_bull": 95,
+    "notes": [
+      "Assumed USD currency.",
+      "EOY (End of Year) is interpreted as the last second of the current year."
+    ],
+    "id": 9,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "Bitcoin flash crash to $15k incoming. Buy orders set",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "BTC",
+      "price": 15000,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -20,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 10,
+    "post_created_at": "2025-09-11T16:02:14.745985Z"
+  },
+  {
+    "post_text": "SHIB deleting three zeros. $0.01 is inevitable within 18 months",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "SHIB",
+      "price": 0.01,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2026-06-01T00:00:00Z"
+    },
+    "bear_bull": 85,
+    "notes": [
+      "Assumed USD currency.",
+      "Timeframe calculated as 18 months from the post date."
+    ],
+    "id": 11,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "LINK $500 next cycle. Chainlink oracles will rule the world",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "LINK",
+      "price": 500,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD currency.",
+      "'Next cycle' is a vague timeframe."
+    ],
+    "id": 12,
+    "post_created_at": "2025-09-11T16:02:14.745986Z"
+  },
+  {
+    "post_text": "DOT to $3 if this bear market continues. Buckle up",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "DOT",
+      "price": 3,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -70,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 13,
+    "post_created_at": "2025-09-11T16:02:14.745987Z"
+  },
+  {
+    "post_text": "MATIC hitting $5 during the next FIFA World Cup. Football season pump incoming",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "MATIC",
+      "price": 5,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2026-06-11T00:00:00Z",
+      "end": "2026-07-19T23:59:59Z"
+    },
+    "bear_bull": 70,
+    "notes": [
+      "Assumed USD currency.",
+      "The next FIFA World Cup is in 2026."
+    ],
+    "id": 14,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "SOL back to $8. This Solana pump is fake",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "SOL",
+      "price": 8,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -20,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 15,
+    "post_created_at": "2025-09-11T16:02:14.745989Z"
+  },
+  {
+    "post_text": "UNI $50 when DeFi summer 2.0 hits. Mark this tweet",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "UNI",
+      "price": 50,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 75,
+    "notes": [
+      "Assumed USD currency.",
+      "'DeFi summer 2.0' is a vague timeframe."
+    ],
+    "id": 16,
+    "post_created_at": "2025-09-11T16:02:14.745990Z"
+  },
+  {
+    "post_text": "ATOM $100 minimum this bull run. Cosmos ecosystem undervalued AF",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "ATOM",
+      "price": 100,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 85,
+    "notes": [
+      "Assumed USD currency.",
+      "'This bull run' is a vague timeframe."
+    ],
+    "id": 17,
+    "post_created_at": "2025-09-11T16:02:14.745991Z"
+  },
+  {
+    "post_text": "DOGE $2.50 by my birthday. Best gift ever would be financial freedom",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "DOGE",
+      "price": 2.5,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 0,
+    "notes": [
+      "The timeframe is not specific enough to be a valid prediction."
+    ],
+    "id": 18,
+    "post_created_at": "2025-09-11T16:02:14.745992Z"
+  },
+  {
+    "post_text": "ETH $10k minimum during the next halving cycle. Layer 2s will drive this",
+    "target_type": "target_price",
+    "extracted_value": {
+      "asset": "ETH",
+      "price": 10000,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD currency.",
+      "'Next halving cycle' is a vague timeframe."
+    ],
+    "id": 19,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "ALGO dead coin. Maybe $0.05 if they're lucky",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "ALGO",
+      "min": 0,
+      "max": 0.05,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -90,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 20,
+    "post_created_at": "2025-09-11T16:02:14.745994Z"
+  },
+  {
+    "post_text": "SOL up 150% from current levels by end of Q1",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "SOL",
+      "percentage": 150,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-15T16:45:00Z",
+      "end": "2025-03-31T23:59:59Z"
+    },
+    "bear_bull": 80,
+    "notes": [
+      "Assumed USD currency.",
+      "End of Q1 is interpreted as the end of March of the following year."
+    ],
+    "id": 21,
+    "post_created_at": "2024-12-15T16:45:00Z"
+  },
+  {
+    "post_text": "DOGE gonna lose 60% of its value. Meme coins are dead",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "DOGE",
+      "percentage": -60,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -60,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 22,
+    "post_created_at": "2025-09-11T16:02:14.745995Z"
+  },
+  {
+    "post_text": "$ETH vs $BTC - 3W. Supertrend just flipped green. Last time this happened, Ethereum pumped +260% against Bitcoin.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 50,
+    "notes": [
+      "The prediction is a percentage change of ETH against BTC."
+    ],
+    "id": 23,
+    "post_created_at": "2025-09-11T16:02:14.745996Z"
+  },
+  {
+    "post_text": "ADA will dump 80% before finding a bottom. Cardano ecosystem is failing",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "ADA",
+      "percentage": -80,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -85,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 24,
+    "post_created_at": "2025-09-11T16:02:14.745998Z"
+  },
+  {
+    "post_text": "AVAX pumping 300% by summer. Avalanche is the ETH killer we've been waiting for",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "AVAX",
+      "percentage": 300,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-06-21T00:00:00Z"
+    },
+    "bear_bull": 85,
+    "notes": [
+      "Assumed USD currency.",
+      "Summer is interpreted as starting on June 21st."
+    ],
+    "id": 25,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "SHIB gonna lose 90% of its value when the meme coin hype dies",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "SHIB",
+      "percentage": -90,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -90,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is vague."
+    ],
+    "id": 26,
+    "post_created_at": "2025-09-11T16:02:14.746179Z"
+  },
+  {
+    "post_text": "LINK up 500% this cycle. Oracles are the backbone of DeFi",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "LINK",
+      "percentage": 500,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 100,
+    "notes": [
+      "Assumed USD currency.",
+      "'This cycle' is a vague timeframe."
+    ],
+    "id": 27,
+    "post_created_at": "2025-09-11T16:02:14.746181Z"
+  },
+  {
+    "post_text": "DOT will crash 70% in the next bear market. Polkadot narrative is dead",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "DOT",
+      "percentage": -70,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -75,
+    "notes": [
+      "Assumed USD currency.",
+      "'Next bear market' is a vague timeframe."
+    ],
+    "id": 28,
+    "post_created_at": "2025-09-11T16:02:14.746182Z"
+  },
+  {
+    "post_text": "MATIC doubles from here by Q2 2025. Polygon zkEVM is the future",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "MATIC",
+      "percentage": 100,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-06-30T23:59:59Z"
+    },
+    "bear_bull": 80,
+    "notes": [
+      "Assumed USD currency.",
+      "'Doubles' is interpreted as a 100% increase. Q2 2025 is from April 1st to June 30th."
+    ],
+    "id": 29,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "UNI down 50% minimum during next correction. DeFi is overvalued",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "UNI",
+      "percentage": -50,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -60,
+    "notes": [
+      "Assumed USD currency.",
+      "'Next correction' is a vague timeframe."
+    ],
+    "id": 30,
+    "post_created_at": "2025-09-11T16:02:14.746184Z"
+  },
+  {
+    "post_text": "ATOM exploding 400% when Cosmos IBC really takes off",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "ATOM",
+      "percentage": 400,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 85,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is vague."
+    ],
+    "id": 31,
+    "post_created_at": "2025-09-11T16:02:14.746185Z"
+  },
+  {
+    "post_text": "ALGO bleeding another 60%. This project is going nowhere",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "ALGO",
+      "percentage": -60,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -70,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 32,
+    "post_created_at": "2025-09-11T16:02:14.746188Z"
+  },
+  {
+    "post_text": "XRP might pump 200% if they win the SEC case next year",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "XRP",
+      "percentage": 200,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "bear_bull": 60,
+    "notes": [
+      "Assumed USD currency.",
+      "The prediction is conditional on the SEC case."
+    ],
+    "id": 33,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "NEAR dropping 40% before finding support. Layer 1s are struggling",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "NEAR",
+      "percentage": -40,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -50,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 34,
+    "post_created_at": "2025-09-11T16:02:14.746190Z"
+  },
+  {
+    "post_text": "FTM will 10x from current levels. Fantom Opera is underrated",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "FTM",
+      "percentage": 900,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD currency.",
+      "'10x' is interpreted as a 900% increase from current levels."
+    ],
+    "id": 35,
+    "post_created_at": "2025-09-11T16:02:14.746191Z"
+  },
+  {
+    "post_text": "LTC losing 30% more before halving pump kicks in",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "LTC",
+      "percentage": -30,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 36,
+    "post_created_at": "2025-09-11T16:02:14.746192Z"
+  },
+  {
+    "post_text": "APT gonna moon 600% this bull run. Aptos Move language is revolutionary",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "APT",
+      "percentage": 600,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD currency.",
+      "'This bull run' is a vague timeframe."
+    ],
+    "id": 37,
+    "post_created_at": "2025-09-11T16:02:14.746193Z"
+  },
+  {
+    "post_text": "ICP will retrace 85% to pre-launch levels. Internet Computer was overhyped",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "ICP",
+      "percentage": -85,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -85,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 38,
+    "post_created_at": "2025-09-11T16:02:14.746195Z"
+  },
+  {
+    "post_text": "SAND up 250% when metaverse hype returns in 2025",
+    "target_type": "pct_change",
+    "extracted_value": {
+      "asset": "SAND",
+      "percentage": 250,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "bear_bull": 70,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is the year 2025."
+    ],
+    "id": 39,
+    "post_created_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "post_text": "VET bleeding 45% more. VeChain partnerships don't mean anything anymore",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -60,
+    "notes": [
+      "Assumed USD currency.",
+      "User is making an observation, not a prediction"
+    ],
+    "id": 40,
+    "post_created_at": "2025-09-11T16:02:14.746196Z"
+  },
+  {
+    "post_text": "BTC will trade between 45k-55k throughout 2025",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "BTC",
+      "min": 45000,
+      "max": 55000,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "bear_bull": 0,
+    "notes": [
+      "Assumed USD currency."
+    ],
+    "id": 41,
+    "post_created_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "post_text": "ETH consolidation zone: $2800-$3200 next month",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "ETH",
+      "min": 2800,
+      "max": 3200,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-11-25T10:30:00Z",
+      "end": "2024-12-25T10:30:00Z"
+    },
+    "bear_bull": 10,
+    "notes": [
+      "Assumed USD currency.",
+      "'Next month' is calculated from the post date."
+    ],
+    "id": 42,
+    "post_created_at": "2024-11-25T10:30:00Z"
+  },
+  {
+    "post_text": "Tom Lee just said he thinks Ethereum $ETH could hit $5,500 in the near term and end the year at $10,000-$12,000",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "ETH",
+      "min": 10000,
+      "max": 12000,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2024-12-31T23:59:59Z"
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD currency.",
+      "The primary prediction is the end-of-year range. The near-term prediction is less specific.",
+      "Prediction by Tom Lee, not poster"
+    ],
+    "id": 43,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "SOL gonna crab between $180-$220 until my ex stops liking my Instagram stories which could be anywhere from 3 days to 3 years",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "SOL",
+      "min": 180,
+      "max": 220,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2025-09-14T00:00:00Z",
+      "end": "2028-09-14T00:00:00Z"
+    },
+    "bear_bull": 10,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 44,
+    "post_created_at": "2025-09-11T16:02:14.746199Z"
+  },
+  {
+    "post_text": "ADA trapped in hell between $0.30-$0.45 forever or until Charles stops making videos about Africa whichever comes first lmao",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "ADA",
+      "min": 0.3,
+      "max": 0.45,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -20,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 45,
+    "post_created_at": "2025-09-11T16:02:14.746200Z"
+  },
+  {
+    "post_text": "DOGE will oscillate between 0.08-0.32 cents following Elon's mood swings. When he's happy dogs pump when he's sad they dump it's science",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "DOGE",
+      "min": 0.0008,
+      "max": 0.0032,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 0,
+    "notes": [
+      "Assumed USD currency.",
+      "The post says 'cents', so the values are divided by 100."
+    ],
+    "id": 46,
+    "post_created_at": "2025-09-11T16:02:14.746201Z"
+  },
+  {
+    "post_text": "LINK marines we're stuck in $6.50-$8.20 purgatory until the next bull run or until my wife understands what an oracle is (never)",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "LINK",
+      "min": 6.5,
+      "max": 8.2,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -5,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 47,
+    "post_created_at": "2025-09-11T16:02:14.746202Z"
+  },
+  {
+    "post_text": "AVAX consolidating $24-$31 but only on Tuesdays when Mercury isn't in retrograde and my horoscope says buy the dip",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "AVAX",
+      "min": 24,
+      "max": 31,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 5,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 48,
+    "post_created_at": "2025-09-11T16:02:14.746203Z"
+  },
+  {
+    "post_text": "XRP will chop between $0.45-$0.65 in this range until SEC guy gets tired of playing games or my pizza arrives whichever is sooner",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "XRP",
+      "min": 0.45,
+      "max": 0.65,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -5,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 49,
+    "post_created_at": "2025-09-11T16:02:14.746204Z"
+  },
+  {
+    "post_text": "MATIC stuck between $0.70-$0.90 forever because polygon rhymes with gone and that's bearish energy ser ngmi if you hold",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "MATIC",
+      "min": 0.7,
+      "max": 0.9,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 50,
+    "post_created_at": "2025-09-11T16:02:14.746205Z"
+  },
+  {
+    "post_text": "UNI dancing between $4.80-$6.20 until DeFi summer 2.0 hits or my mom stops asking if I won the lottery yet (spoiler: I didn't)",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "UNI",
+      "min": 4.8,
+      "max": 6.2,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 0,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 51,
+    "post_created_at": "2025-09-11T16:02:14.746207Z"
+  },
+  {
+    "post_text": "DOT gonna sideways crab $4.10-$5.90 because my magic 8 ball said 'reply hazy try again' and that's basically range bound advice",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "DOT",
+      "min": 4.1,
+      "max": 5.9,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -5,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 52,
+    "post_created_at": "2025-09-11T16:02:14.746208Z"
+  },
+  {
+    "post_text": "ATOM trapped between $7.80-$10.20 in the cosmos void until IBC actually does something or heat death of universe",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "ATOM",
+      "min": 7.8,
+      "max": 10.2,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 53,
+    "post_created_at": "2025-09-11T16:02:14.746209Z"
+  },
+  {
+    "post_text": "ALGO range bound $0.12-$0.18 until they fix their tokenomics or my therapist says I'm cured of hopium addiction",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "ALGO",
+      "min": 0.12,
+      "max": 0.18,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 54,
+    "post_created_at": "2025-09-11T16:02:14.746210Z"
+  },
+  {
+    "post_text": "FTM oscillating $0.25-$0.40 like a ghost that can't decide if it wants to haunt this portfolio or move on to crypto heaven",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "FTM",
+      "min": 0.25,
+      "max": 0.4,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -5,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 55,
+    "post_created_at": "2025-09-11T16:02:14.746211Z"
+  },
+  {
+    "post_text": "NEAR chopping between $1.20-$1.80 until they rebrand to FAR or my landlord accepts crypto rent payments (he won't)",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "NEAR",
+      "min": 1.2,
+      "max": 1.8,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 56,
+    "post_created_at": "2025-09-11T16:02:14.746212Z"
+  },
+  {
+    "post_text": "LTC grinding between $68-$88 because it's digital silver but silver is boring and Charlie Lee sold the top that one time",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "LTC",
+      "min": 68,
+      "max": 88,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 5,
+    "notes": [
+      "Assumed USD currency.",
+      "The timeframe is humorous and not specific."
+    ],
+    "id": 57,
+    "post_created_at": "2025-09-11T16:02:14.746213Z"
+  },
+  {
+    "post_text": "SOL gonna crab between $180-$220 until my ex stops liking my Instagram stories which should be by Valentine's Day 2025 hopefully",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "SOL",
+      "min": 180,
+      "max": 220,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-02-14T00:00:00Z"
+    },
+    "bear_bull": -5,
+    "notes": [
+      "Assumed USD currency.",
+      "Valentine's Day is interpreted as the beginning of February 14th."
+    ],
+    "id": 58,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "DOGE will oscillate between 0.08-0.32 cents following Elon's mood swings throughout Q2 2025 when Tesla earnings come out",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "DOGE",
+      "min": 0.0008,
+      "max": 0.0032,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2025-04-01T00:00:00Z",
+      "end": "2025-06-30T23:59:59Z"
+    },
+    "bear_bull": 0,
+    "notes": [
+      "Assumed USD currency.",
+      "The post says 'cents', so the values are divided by 100. Q2 2025 is from April 1st to June 30th."
+    ],
+    "id": 59,
+    "post_created_at": "2025-04-01T00:00:00Z"
+  },
+  {
+    "post_text": "XRP will chop between $0.45-$0.65 until the SEC case resolves by end of summer 2025 or my pizza arrives whichever is sooner",
+    "target_type": "range",
+    "extracted_range": {
+      "asset": "XRP",
+      "min": 0.45,
+      "max": 0.65,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-09-23T00:00:00Z"
+    },
+    "bear_bull": 0,
+    "notes": [
+      "Assumed USD currency.",
+      "End of summer 2025 is interpreted as the autumnal equinox."
+    ],
+    "id": 60,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "AVAX will be top 5 by market cap this bull run",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "AVAX",
+      "ranking": 5,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD market cap.",
+      "'This bull run' is a vague timeframe."
+    ],
+    "id": 61,
+    "post_created_at": "2025-09-11T16:02:14.746215Z"
+  },
+  {
+    "post_text": "LINK dropping out of top 20 soon",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "LINK",
+      "ranking": 21,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -60,
+    "notes": [
+      "Assumed USD market cap. 'Dropping out of top 20' implies a rank of 21 or lower."
+    ],
+    "id": 62,
+    "post_created_at": "2025-09-11T16:02:14.746216Z"
+  },
+  {
+    "post_text": "PEPE gonna crack top 10 by market cap when normies discover memes are the future",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "PEPE",
+      "ranking": 10,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 70,
+    "notes": [
+      "Assumed USD market cap.",
+      "The timeframe is vague."
+    ],
+    "id": 63,
+    "post_created_at": "2025-09-11T16:02:14.746217Z"
+  },
+  {
+    "post_text": "SOL will flip ETH and become #2 crypto by end of 2025 mark my words",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "SOL",
+      "ranking": 2,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "bear_bull": 85,
+    "notes": [
+      "Assumed USD market cap."
+    ],
+    "id": 64,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "ADA falling out of top 15 soon. Cardano hype is dead and buried",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "ADA",
+      "ranking": 16,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -70,
+    "notes": [
+      "Assumed USD market cap. 'Falling out of top 15' implies a rank of 16 or lower."
+    ],
+    "id": 65,
+    "post_created_at": "2025-09-11T16:02:14.746219Z"
+  },
+  {
+    "post_text": "DOGE will be the most valuable cryptocurrency in the universe when Elon colonizes Mars",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 0,
+    "notes": [
+      "This is a hyperbolic and non-specific prediction."
+    ],
+    "id": 66,
+    "post_created_at": "2025-09-11T16:02:14.746220Z"
+  },
+  {
+    "post_text": "XRP will be worth $589 per coin and rank #1 globally",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "XRP",
+      "ranking": 1,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 100,
+    "notes": [
+      "Assumed USD market cap. This also contains a price prediction, but the ranking is the more ambitious claim."
+    ],
+    "id": 67,
+    "post_created_at": "2025-09-11T16:02:14.746221Z"
+  },
+  {
+    "post_text": "MATIC dropping to #25 by market cap. Polygon is getting rekt by competition",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "MATIC",
+      "ranking": 25,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -60,
+    "notes": [
+      "Assumed USD market cap."
+    ],
+    "id": 68,
+    "post_created_at": "2025-09-11T16:02:14.746222Z"
+  },
+  {
+    "post_text": "SHIB will never break top 50 ever again. Meme season is over forever",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "SHIB",
+      "ranking": 51,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -75,
+    "notes": [
+      "Assumed USD market cap. 'Never break top 50' implies a rank of 51 or lower."
+    ],
+    "id": 69,
+    "post_created_at": "2025-09-11T16:02:14.746223Z"
+  },
+  {
+    "post_text": "ATOM will be top 3 DeFi coin by summer when Cosmos IBC goes mainstream",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "ATOM",
+      "ranking": 3,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-06-21T00:00:00Z"
+    },
+    "bear_bull": 80,
+    "notes": [
+      "Assumed USD market cap in the DeFi category. Summer is interpreted as starting on June 21st."
+    ],
+    "id": 70,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "UNI falling to #30 because DeFi is dead and everyone moved to meme coins",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "UNI",
+      "ranking": 30,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -65,
+    "notes": [
+      "Assumed USD market cap."
+    ],
+    "id": 71,
+    "post_created_at": "2025-09-11T16:02:14.746224Z"
+  },
+  {
+    "post_text": "DOT will be the king of Layer 0s and reach top 8 this cycle",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "DOT",
+      "ranking": 8,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 80,
+    "notes": [
+      "Assumed USD market cap. 'This cycle' is a vague timeframe."
+    ],
+    "id": 72,
+    "post_created_at": "2025-09-11T16:02:14.746225Z"
+  },
+  {
+    "post_text": "NEAR Protocol gonna be #1 developer platform beating Ethereum by 2026",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "NEAR",
+      "ranking": 1,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2026-12-31T23:59:59Z"
+    },
+    "bear_bull": 90,
+    "notes": [
+      "Assumed USD market cap among developer platforms."
+    ],
+    "id": 73,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "FTM will never see top 100 again. Fantom is a ghost chain literally and figuratively",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "FTM",
+      "ranking": 101,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -80,
+    "notes": [
+      "Assumed USD market cap. 'Never see top 100 again' implies a rank of 101 or lower."
+    ],
+    "id": 74,
+    "post_created_at": "2025-09-11T16:02:14.746227Z"
+  },
+  {
+    "post_text": "ALGO will be top 12 when they finally fix their tokenomics disaster",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "ALGO",
+      "ranking": 12,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 20,
+    "notes": [
+      "Assumed USD market cap. The timeframe is vague."
+    ],
+    "id": 75,
+    "post_created_at": "2025-09-11T16:02:14.746228Z"
+  },
+  {
+    "post_text": "VET will flip LINK and enter top 18 when China unbans crypto",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "VET",
+      "ranking": 18,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 75,
+    "notes": [
+      "Assumed USD market cap. The timeframe is vague and conditional."
+    ],
+    "id": 76,
+    "post_created_at": "2025-09-11T16:02:14.746229Z"
+  },
+  {
+    "post_text": "ICP will pump 500% and reach top 20 by market cap next year",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "ICP",
+      "ranking": 20,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2024-12-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "bear_bull": 85,
+    "notes": [
+      "Assumed USD market cap. This also contains a percentage change prediction, but the ranking is a strong claim."
+    ],
+    "id": 77,
+    "post_created_at": "2024-12-01T00:00:00Z"
+  },
+  {
+    "post_text": "LTC will be #15 by market cap during next halving cycle. Digital silver narrative returns",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "LTC",
+      "ranking": 15,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 70,
+    "notes": [
+      "Assumed USD market cap. 'Next halving cycle' is a vague timeframe."
+    ],
+    "id": 78,
+    "post_created_at": "2025-09-11T16:02:14.746231Z"
+  },
+  {
+    "post_text": "APT will be the Solana killer and reach top 6 by market cap this bull run",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "APT",
+      "ranking": 6,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 85,
+    "notes": [
+      "Assumed USD market cap. 'This bull run' is a vague timeframe."
+    ],
+    "id": 79,
+    "post_created_at": "2025-09-11T16:02:14.746232Z"
+  },
+  {
+    "post_text": "SAND will be #1 gaming crypto when metaverse hype returns in 2025",
+    "target_type": "ranking",
+    "extracted_value": {
+      "asset": "SAND",
+      "ranking": 1,
+      "currency": "USD"
+    },
+    "timeframe": {
+      "explicit": true,
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2025-12-31T23:59:59Z"
+    },
+    "bear_bull": 80,
+    "notes": [
+      "Assumed USD market cap in the gaming category. The timeframe is the year 2025."
+    ],
+    "id": 80,
+    "post_created_at": "2025-01-01T00:00:00Z"
+  },
+  {
+    "post_text": "Crypto markets are so unpredictable right now. Nobody knows what's happening",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "No measurable prediction."
+    ],
+    "id": 81,
+    "post_created_at": "2025-09-11T16:02:14.746233Z"
+  },
+  {
+    "post_text": "HODL strong everyone! Diamond hands will be rewarded",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 50,
+    "notes": [
+      "General bullish sentiment, but no specific prediction."
+    ],
+    "id": 82,
+    "post_created_at": "2025-09-11T16:02:14.746235Z"
+  },
+  {
+    "post_text": "It's become contrarian to hold $SOL again. We all know how this ends.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 10,
+    "notes": [
+      "Implies a bullish outcome for SOL, but not a specific prediction."
+    ],
+    "id": 83,
+    "post_created_at": "2025-09-11T16:02:14.746236Z"
+  },
+  {
+    "post_text": "$sol vs $btc still some room down but monthly SFP clear shows reversal in the making #solana",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 10,
+    "notes": [
+      "Technical analysis without a specific target."
+    ],
+    "id": 84,
+    "post_created_at": "2025-09-11T16:02:14.746237Z"
+  },
+  {
+    "post_text": "We got a 4H inside bar on SOL and a 4H candle w no bottom wick Decent chance we take out yday's low before a proper bounce imo... one of these two",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 10,
+    "notes": [
+      "Technical analysis with two possible scenarios, not a concrete prediction."
+    ],
+    "id": 85,
+    "post_created_at": "2025-09-11T16:02:14.746238Z"
+  },
+  {
+    "post_text": "$BTC is now at a very crucial level. If this level holds, BTC could see a reversal. Otherwise, the dump could be severe.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 0,
+    "notes": [
+      "Presents two opposing scenarios, not a prediction."
+    ],
+    "id": 86,
+    "post_created_at": "2025-09-11T16:02:14.746240Z"
+  },
+  {
+    "post_text": "JUST IN: BlackRock sent 10K $BTC to 40 different wallets! Why are they doing this, and what does it mean for Bitcoin? I scanned all 40 wallets, studied everything, and was shocked. Here's what it means and what's happening behind the scenes",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 5,
+    "notes": [
+      "News report, not a prediction. The tone is slightly bullish/sensational."
+    ],
+    "id": 87,
+    "post_created_at": "2025-09-11T16:02:14.746241Z"
+  },
+  {
+    "post_text": "New $DOGE ATH is imminent imo",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 80,
+    "notes": [
+      "ATH (All-Time High) is not a specific price target without more context."
+    ],
+    "id": 88,
+    "post_created_at": "2025-09-11T16:02:14.746242Z"
+  },
+  {
+    "post_text": "Another boring sideways day in crypto. Nothing moves except my anxiety.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -10,
+    "notes": [
+      "No prediction, just a statement about market conditions."
+    ],
+    "id": 89,
+    "post_created_at": "2025-09-11T16:02:14.746244Z"
+  },
+  {
+    "post_text": "Whales are just playing with retail. Same game, different day.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -5,
+    "notes": [
+      "No prediction, just a cynical market observation."
+    ],
+    "id": 90,
+    "post_created_at": "2025-09-11T16:02:14.746245Z"
+  },
+  {
+    "post_text": "Macro still controls everything. Until the Fed pivots, nothing matters.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -15,
+    "notes": [
+      "No prediction, just a statement about macroeconomic factors."
+    ],
+    "id": 91,
+    "post_created_at": "2025-09-11T16:02:14.746246Z"
+  },
+  {
+    "post_text": "Crypto Twitter is euphoric again. Usually not a good sign.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -20,
+    "notes": [
+      "Contrarian sentiment, implying a potential downturn, but not a specific prediction."
+    ],
+    "id": 92,
+    "post_created_at": "2025-09-11T16:02:14.746248Z"
+  },
+  {
+    "post_text": "The chart looks like it wants to go up, but also like it wants to go down. Classic.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 0,
+    "notes": [
+      "No prediction, just a humorous observation about chart ambiguity."
+    ],
+    "id": 93,
+    "post_created_at": "2025-09-11T16:02:14.746249Z"
+  },
+  {
+    "post_text": "Bullish divergence on the RSI but volume is dead. Mixed signals everywhere.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 5,
+    "notes": [
+      "Technical analysis with conflicting signals, not a concrete prediction."
+    ],
+    "id": 94,
+    "post_created_at": "2025-09-11T16:02:14.746251Z"
+  },
+  {
+    "post_text": "This looks like the calm before the storm... or maybe just calm forever.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 0,
+    "notes": [
+      "No prediction, just a statement of uncertainty."
+    ],
+    "id": 95
+  },
+  {
+    "post_text": "Altcoin season is always just around the corner, right?",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 15,
+    "notes": [
+      "Sarcastic but hopeful sentiment, not a specific prediction."
+    ],
+    "id": 96,
+    "post_created_at": "2025-09-11T16:02:14.746253Z"
+  },
+  {
+    "post_text": "If I had a dollar for every time someone called the bottom, I'd have more than my portfolio is worth.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 10,
+    "notes": [
+      "Humorous and cynical, not a prediction."
+    ],
+    "id": 97,
+    "post_created_at": "2025-09-11T16:02:14.746254Z"
+  },
+  {
+    "post_text": "Market structure is holding... for now.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 10,
+    "notes": [
+      "Slightly bullish observation, but not a prediction."
+    ],
+    "id": 98
+  },
+  {
+    "post_text": "Feels like we're about to witness something big, but I have no idea what.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 5,
+    "notes": [
+      "No prediction, just a feeling of anticipation."
+    ],
+    "id": 99,
+    "post_created_at": "2025-09-11T16:02:14.746256Z"
+  },
+  {
+    "post_text": "Everyone is bullish, which makes me bearish, which probably makes me wrong.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": 5,
+    "notes": [
+      "Contrarian and self-deprecating humor, not a prediction."
+    ],
+    "id": 100,
+    "post_created_at": "2025-09-11T16:02:14.746257Z"
+  },
+  {
+    "post_text": "Every dip looks like the last dip until it doesn't.",
+    "target_type": "none",
+    "timeframe": {
+      "explicit": false,
+      "start": null,
+      "end": null
+    },
+    "bear_bull": -5,
+    "notes": [
+      "Cynical observation about buying dips, not a prediction."
+    ],
+    "id": 101,
+    "post_created_at": "2025-09-11T16:02:14.746259Z"
+  }
+]
