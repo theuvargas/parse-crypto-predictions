@@ -1,5 +1,6 @@
 from pydantic_ai import Agent
 from dotenv import load_dotenv
+from pydantic_ai.models.google import GoogleModel
 from .models import ParsedPrediction
 from . import config
 
@@ -147,8 +148,9 @@ instructions = (
     f"Examples:\n\n{few_shot}"
 )
 
+model = GoogleModel(config.model_name)
 agent = Agent(
-    f"{config.provider}:{config.model_name}",
+    model,
     output_type=ParsedPrediction,
     instructions=instructions,
     model_settings=config.model_settings,
