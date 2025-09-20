@@ -137,7 +137,7 @@ instructions = (
     "\n\n"
     "Instructions:"
     "\n\n"
-    "- Dates: Any extracted date must be in the UTC ISO4601 format"
+    "- Dates: Any extracted date must be in the UTC ISO 8601 format"
     "- Assumptions: For each of your assumptions and normalization "
     "decisions, make a new single-phrase entry in the 'notes' list"
     "- This is social media content, beware of sarcasm and irony"
