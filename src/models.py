@@ -87,13 +87,14 @@ class ParsedPrediction(BaseModel):
 
 
 TargetType = Literal["target_price", "pct_change", "range", "ranking", "none"]
+ExtractedValueType = TargetPrice | PercentageChange | Range | Ranking | None
 
 
 class ParsedPredictionResponse(BaseModel):
     """Response returned by the FastAPI endpoint"""
 
     target_type: TargetType
-    extracted_value: TargetPrice | PercentageChange | Range | Ranking | None
+    extracted_value: ExtractedValueType
     bear_bull: int
     timeframe: Timeframe
     notes: list[str]

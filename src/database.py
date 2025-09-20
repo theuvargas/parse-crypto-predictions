@@ -1,5 +1,7 @@
+from uuid import UUID
 import duckdb
 from pydantic_ai import RunUsage
+from .models import ParsedPredictionResponse
 from . import config
 
 
@@ -24,6 +26,18 @@ def init_db() -> None:
             succeeded BOOLEAN
         );
         """
+    )
+    con.execute(
+        """
+        CREATE TABLE IF NOT EXISTS prediction_results (
+            run_id UUID,
+            example_id INTEGER,
+            batch_id int,
+            batch_size INTEGER,
+            created_at TIMESTAMP DEFAULT now(),
+            raw_prediction_json JSON
+        );
+        """,
     )
     con.close()
 
@@ -67,5 +81,29 @@ def log_usage_event(
             latency_ms,
             succeeded,
         ],
+    )
+    con.close()
+
+
+def log_predictions(
+    run_id: UUID,
+    example_id: int,
+    batch_id: int,
+    batch_size: int,
+    raw_prediction_json: ParsedPredictionResponse,
+) -> None:
+    con = duckdb.connect(config.db_file)
+    con.execute(
+        """
+        INSERT INTO prediction_results (
+            run_id,
+            example_id,
+            batch_id,
+            batch_size,
+            raw_prediction_json
+        )
+        VALUES (?, ?, ?, ?, ?)
+        """,
+        [run_id, example_id, batch_id, batch_size, raw_prediction_json],
     )
     con.close()
