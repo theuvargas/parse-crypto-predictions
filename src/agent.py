@@ -170,14 +170,14 @@ batch_agent = Agent(
 )
 
 
-async def parse_prediction_single(
+async def run_agent(
     item: NaturalLanguagePrediction,
 ) -> tuple[ParsedPrediction, RunUsage]:
     response = await agent.run(build_single_prompt(item))
     return response.output, response.usage()
 
 
-async def parse_prediction_batch(
+async def run_batch_agent(
     items: list[NaturalLanguagePrediction],
 ) -> tuple[list[ParsedPrediction], RunUsage]:
     prompt = build_batch_prompt(items)

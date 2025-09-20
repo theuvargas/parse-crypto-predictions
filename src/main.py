@@ -3,7 +3,7 @@ from time import perf_counter
 from uuid import uuid4
 import uvicorn
 from fastapi import FastAPI
-from .agent import parse_prediction_batch, parse_prediction_single
+from .agent import run_agent, run_batch_agent
 from .config import model_name
 from .database import init_db, log_usage_event
 from .helpers import to_response
@@ -30,8 +30,8 @@ async def parse_prediction(
     batch_id = str(uuid4())
     started = perf_counter()
     try:
-        parsed, usage = await parse_prediction_single(input)
-    except Exception as exc:  # pragma: no cover - defensive logging
+        parsed, usage = await run_agent(input)
+    except Exception as exc:
         elapsed_ms = (perf_counter() - started) * 1000
         log_usage_event(
             model_name=model_name,
@@ -55,8 +55,8 @@ async def parse_prediction(
     return to_response(parsed)
 
 
-@app.post("/parse_predictions", response_model=list[ParsedPredictionResponse])
-async def parse_predictions(
+@app.post("/parse_prediction_batch", response_model=list[ParsedPredictionResponse])
+async def parse_prediction_batch(
     request: BatchPredictionRequest,
 ) -> list[ParsedPredictionResponse]:
     if not request.items:
@@ -66,8 +66,8 @@ async def parse_predictions(
     batch_id = str(uuid4())
     started = perf_counter()
     try:
-        parsed_list, usage = await parse_prediction_batch(request.items)
-    except Exception as exc:  # pragma: no cover - defensive logging
+        parsed_list, usage = await run_batch_agent(request.items)
+    except Exception as exc:
         elapsed_ms = (perf_counter() - started) * 1000
         log_usage_event(
             model_name=model_name,
