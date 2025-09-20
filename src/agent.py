@@ -1,10 +1,7 @@
-from dotenv import load_dotenv
 from pydantic_ai import Agent, RunUsage
 from . import config
 from .helpers import build_batch_prompt, build_single_prompt
 from .models import NaturalLanguagePrediction, ParsedPrediction
-
-load_dotenv()
 
 few_shot = """
 Input:

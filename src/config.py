@@ -1,7 +1,9 @@
 from pydantic_ai.models.google import GoogleModelSettings
 from pydantic_ai.models.google import GoogleModel
 from . import config
+from dotenv import load_dotenv
 
+load_dotenv()
 
 db_file = "crypto_predictions.db"
 model_name = "gemini-2.5-flash"
