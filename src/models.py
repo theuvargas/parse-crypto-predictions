@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from typing import Literal
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
 from pydantic_extra_types.currency_code import ISO4217
 
@@ -53,6 +53,21 @@ class Timeframe(BaseModel):
     end: datetime | None = Field(
         None, description="The end timestamp of the prediction"
     )
+
+    @field_validator("start", "end")
+    @classmethod
+    def validate_datetimes_are_utc(cls, v: datetime | None):
+        if v is None:
+            return v
+
+        offset = v.utcoffset()
+        if offset is None:
+            raise ValueError("datetime must be timezone-aware")
+
+        if offset.total_seconds() != 0:
+            raise ValueError("datetime must be in UTC")
+
+        return v
 
 
 class ParsedPrediction(BaseModel):
