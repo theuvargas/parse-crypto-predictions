@@ -1,4 +1,3 @@
-from dataclasses import dataclass
 from typing import Literal
 from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
@@ -87,8 +86,9 @@ class ParsedPrediction(BaseModel):
     notes: list[str] = Field(description="Reasoning for parsing decisions")
 
 
-@dataclass
-class ParsedPredictionResponse:
+class ParsedPredictionResponse(BaseModel):
+    """Response returned by the FastAPI endpoint"""
+
     target_type: Literal["target_price", "pct_change", "range", "ranking", "none"]
     extracted_value: TargetPrice | PercentageChange | Range | Ranking | None
     bear_bull: int

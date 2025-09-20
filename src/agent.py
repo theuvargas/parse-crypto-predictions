@@ -59,11 +59,11 @@ Output:
 
 Input:
 "Post: 'ETH consolidating between $3,200-$3,800 next month. Chart analysis attached 📊',
-Created at": "2025-08-25T12:00:00Z"
+Created at: 2025-08-25T12:00:00Z"
 
 Output:
 {
-  "extracted_range": {
+  "extracted_value": {
     "asset": "ETH",
     "min": 3200,
     "max": 3800,
@@ -108,12 +108,13 @@ Output:
   ]
 }
 
-Input
+Input:
 "Post: 'RT @market_news: Crypto market volatility hits new highs this week. This is exactly why I don't make predictions anymore 🤷‍♂️',
 Created at: 2025-08-25T12:00:00Z"
 
 Output:
 {
+  "extracted_value": null,
   "timeframe": {
     "explicit": false,
     "start": null,

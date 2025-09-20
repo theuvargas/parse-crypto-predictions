@@ -45,14 +45,15 @@ async def parse_prediction(
         target_type = "ranking"
 
     usage = response.usage()
-    log_token_usage(
-        model_name=model_name,
-        input_tokens=usage.input_tokens,
-        output_tokens=usage.output_tokens,
-        requests=usage.requests,
-        cache_read_tokens=usage.cache_read_tokens,
-        cache_write_tokens=usage.cache_write_tokens,
-    )
+    if usage is not None:
+        log_token_usage(
+            model_name=model_name,
+            input_tokens=usage.input_tokens,
+            output_tokens=usage.output_tokens,
+            requests=usage.requests,
+            cache_read_tokens=usage.cache_read_tokens,
+            cache_write_tokens=usage.cache_write_tokens,
+        )
 
     return ParsedPredictionResponse(
         target_type=target_type,
