@@ -1,12 +1,14 @@
 import duckdb
+from pydantic_ai import RunUsage
 from . import config
 
 
-def init_db():
-    """Initializes the database and creates the token_usage table if it doesn't exist."""
+def init_db() -> None:
+    """Initializes the database with the token_usage table."""
     con = duckdb.connect(config.db_file)
     con.execute("CREATE SEQUENCE IF NOT EXISTS token_usage_seq;")
-    con.execute("""
+    con.execute(
+        """
         CREATE TABLE IF NOT EXISTS token_usage (
             id UBIGINT PRIMARY KEY DEFAULT nextval('token_usage_seq'),
             timestamp TIMESTAMP WITH TIME ZONE DEFAULT now(),
@@ -15,34 +17,55 @@ def init_db():
             output_tokens UINTEGER,
             requests UINTEGER,
             cache_read_tokens UINTEGER,
-            cache_write_tokens UINTEGER
+            cache_write_tokens UINTEGER,
+            batch_id UUID,
+            batch_size UINTEGER,
+            latency_ms DOUBLE,
+            succeeded BOOLEAN
         );
-    """)
+        """
+    )
     con.close()
-    print("Database initialized successfully.")
 
 
-def log_token_usage(
+def log_usage_event(
     model_name: str,
-    input_tokens: int,
-    output_tokens: int,
-    requests: int,
-    cache_read_tokens: int,
-    cache_write_tokens: int,
-):
-    """Logs a new token usage record to the database."""
+    usage: RunUsage | None,
+    batch_id: str,
+    batch_size: int,
+    latency_ms: float,
+    succeeded: bool,
+) -> None:
+    """Persist usage metrics for a single request/batch."""
+
     con = duckdb.connect(config.db_file)
     con.execute(
-        """INSERT INTO
-        token_usage (model_name, input_tokens, output_tokens, requests, cache_read_tokens, cache_write_tokens)
-        VALUES (?, ?, ?, ?, ?, ?)""",
-        [
+        """
+        INSERT INTO token_usage (
             model_name,
             input_tokens,
             output_tokens,
             requests,
             cache_read_tokens,
             cache_write_tokens,
+            batch_id,
+            batch_size,
+            latency_ms,
+            succeeded
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        [
+            model_name,
+            usage.input_tokens if usage else 0,
+            usage.output_tokens if usage else 0,
+            usage.requests if usage else 0,
+            usage.cache_read_tokens if usage else 0,
+            usage.cache_write_tokens if usage else 0,
+            batch_id,
+            batch_size,
+            latency_ms,
+            succeeded,
         ],
     )
     con.close()

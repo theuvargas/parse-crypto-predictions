@@ -1,8 +1,9 @@
-from pydantic_ai import Agent
 from dotenv import load_dotenv
+from pydantic_ai import Agent, RunUsage
 from pydantic_ai.models.google import GoogleModel
-from .models import ParsedPrediction
 from . import config
+from .helpers import build_batch_prompt, build_single_prompt
+from .models import NaturalLanguagePrediction, ParsedPrediction
 
 load_dotenv()
 
@@ -131,7 +132,7 @@ Output:
 }
 """
 
-instructions = (
+base_instructions = (
     "You are an expert in cryptocurrency and general trading jargon. "
     "Your objective is to extract information from crypto-related "
     "predictions in natural language into parseable JSON data."
@@ -145,14 +146,43 @@ instructions = (
     "- When a single post contains multiple classes of predictions "
     "(e.g. a ranking and a target value) choose the boldest prediction "
     "as the class."
-    "\n\n"
-    f"Examples:\n\n{few_shot}"
+)
+
+single_instructions = f"{base_instructions}\n\nExamples:\n\n{few_shot}"
+
+batch_instructions = (
+    f"{base_instructions}\n\nExamples:\n\n{few_shot}"
+    "\n\nWhen you receive multiple inputs, respond with a JSON array where each element "
+    "is a ParsedPrediction object matching the order of the provided posts."
 )
 
 model = GoogleModel(config.model_name)
+
 agent = Agent(
     model,
     output_type=ParsedPrediction,
-    instructions=instructions,
+    instructions=single_instructions,
     model_settings=config.model_settings,
 )
+
+batch_agent = Agent(
+    model,
+    output_type=list[ParsedPrediction],
+    instructions=batch_instructions,
+    model_settings=config.model_settings,
+)
+
+
+async def parse_prediction_single(
+    item: NaturalLanguagePrediction,
+) -> tuple[ParsedPrediction, RunUsage]:
+    response = await agent.run(build_single_prompt(item))
+    return response.output, response.usage()
+
+
+async def parse_prediction_batch(
+    items: list[NaturalLanguagePrediction],
+) -> tuple[list[ParsedPrediction], RunUsage]:
+    prompt = build_batch_prompt(items)
+    response = await batch_agent.run(prompt)
+    return response.output, response.usage()

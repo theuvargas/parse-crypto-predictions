@@ -1,17 +1,17 @@
 from contextlib import asynccontextmanager
+from time import perf_counter
+from uuid import uuid4
+import uvicorn
 from fastapi import FastAPI
-from .agent import agent
+from .agent import parse_prediction_batch, parse_prediction_single
+from .config import model_name
+from .database import init_db, log_usage_event
+from .helpers import to_response
 from .models import (
+    BatchPredictionRequest,
     NaturalLanguagePrediction,
     ParsedPredictionResponse,
-    PercentageChange,
-    Range,
-    Ranking,
-    TargetPrice,
 )
-import uvicorn
-from .database import init_db, log_token_usage
-from .config import model_name
 
 
 @asynccontextmanager
@@ -27,44 +27,77 @@ app = FastAPI(lifespan=lifespan)
 async def parse_prediction(
     input: NaturalLanguagePrediction,
 ) -> ParsedPredictionResponse:
-    input_text = f"Input:\nPost: '{input.post_text}'\nCreated at: {input.post_created_at}\n\nOutput:\n"
-    response = await agent.run(input_text)
-
-    parsed = response.output
-
-    # programatically finds the target_type to save some tokens
-    # and avoid hallucinations
-    target_type = "none"
-    if isinstance(parsed.extracted_value, TargetPrice):
-        target_type = "target_price"
-    elif isinstance(parsed.extracted_value, PercentageChange):
-        target_type = "pct_change"
-    elif isinstance(parsed.extracted_value, Range):
-        target_type = "range"
-    elif isinstance(parsed.extracted_value, Ranking):
-        target_type = "ranking"
-
-    usage = response.usage()
-    if usage is not None:
-        log_token_usage(
+    batch_id = str(uuid4())
+    started = perf_counter()
+    try:
+        parsed, usage = await parse_prediction_single(input)
+    except Exception as exc:  # pragma: no cover - defensive logging
+        elapsed_ms = (perf_counter() - started) * 1000
+        log_usage_event(
             model_name=model_name,
-            input_tokens=usage.input_tokens,
-            output_tokens=usage.output_tokens,
-            requests=usage.requests,
-            cache_read_tokens=usage.cache_read_tokens,
-            cache_write_tokens=usage.cache_write_tokens,
+            usage=None,
+            batch_id=batch_id,
+            batch_size=1,
+            latency_ms=elapsed_ms,
+            succeeded=False,
         )
+        raise exc
 
-    return ParsedPredictionResponse(
-        target_type=target_type,
-        extracted_value=parsed.extracted_value,
-        bear_bull=parsed.bear_bull,
-        timeframe=parsed.timeframe,
-        notes=parsed.notes,
+    elapsed_ms = (perf_counter() - started) * 1000
+    log_usage_event(
+        model_name=model_name,
+        usage=usage,
+        batch_id=batch_id,
+        batch_size=1,
+        latency_ms=elapsed_ms,
+        succeeded=True,
+    )
+    return to_response(parsed)
+
+
+@app.post("/parse_predictions", response_model=list[ParsedPredictionResponse])
+async def parse_predictions(
+    request: BatchPredictionRequest,
+) -> list[ParsedPredictionResponse]:
+    if not request.items:
+        return []
+
+    batch_size = len(request.items)
+    batch_id = str(uuid4())
+    started = perf_counter()
+    try:
+        parsed_list, usage = await parse_prediction_batch(request.items)
+    except Exception as exc:  # pragma: no cover - defensive logging
+        elapsed_ms = (perf_counter() - started) * 1000
+        log_usage_event(
+            model_name=model_name,
+            usage=None,
+            batch_id=batch_id,
+            batch_size=batch_size,
+            latency_ms=elapsed_ms,
+            succeeded=False,
+        )
+        raise exc
+
+    elapsed_ms = (perf_counter() - started) * 1000
+    log_usage_event(
+        model_name=model_name,
+        usage=usage,
+        batch_id=batch_id,
+        batch_size=batch_size,
+        latency_ms=elapsed_ms,
+        succeeded=True,
     )
 
+    if len(parsed_list) != batch_size:
+        raise ValueError(
+            "Batch parsing returned a different number of predictions than inputs"
+        )
 
-def main():
+    return [to_response(item) for item in parsed_list]
+
+
+def main() -> None:
     uvicorn.run("src.main:app", reload=True)
 
 

@@ -86,10 +86,13 @@ class ParsedPrediction(BaseModel):
     notes: list[str] = Field(description="Reasoning for parsing decisions")
 
 
+TargetType = Literal["target_price", "pct_change", "range", "ranking", "none"]
+
+
 class ParsedPredictionResponse(BaseModel):
     """Response returned by the FastAPI endpoint"""
 
-    target_type: Literal["target_price", "pct_change", "range", "ranking", "none"]
+    target_type: TargetType
     extracted_value: TargetPrice | PercentageChange | Range | Ranking | None
     bear_bull: int
     timeframe: Timeframe
@@ -99,3 +102,10 @@ class ParsedPredictionResponse(BaseModel):
 class NaturalLanguagePrediction(BaseModel):
     post_text: str = Field(description="The text of the post")
     post_created_at: datetime = Field(description="Creation date of the post")
+
+
+class BatchPredictionRequest(BaseModel):
+    items: list[NaturalLanguagePrediction] = Field(
+        default_factory=list,
+        description="Collection of posts to parse in a single request",
+    )
