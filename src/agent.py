@@ -1,6 +1,5 @@
 from dotenv import load_dotenv
 from pydantic_ai import Agent, RunUsage
-from pydantic_ai.models.google import GoogleModel
 from . import config
 from .helpers import build_batch_prompt, build_single_prompt
 from .models import NaturalLanguagePrediction, ParsedPrediction
@@ -156,20 +155,18 @@ batch_instructions = (
     "is a ParsedPrediction object matching the order of the provided posts."
 )
 
-model = GoogleModel(config.model_name)
-
 agent = Agent(
-    model,
+    config.model,
     output_type=ParsedPrediction,
     instructions=single_instructions,
-    model_settings=config.model_settings,
+    model_settings=config.agent_settings,
 )
 
 batch_agent = Agent(
-    model,
+    config.model,
     output_type=list[ParsedPrediction],
     instructions=batch_instructions,
-    model_settings=config.model_settings,
+    model_settings=config.batch_agent_settings,
 )
 
 
