@@ -28,30 +28,19 @@ Endpoints disponíveis:
 - `POST /parse_prediction` — processa um único post.
 - `POST /parse_prediction_batch` — aceita um corpo `{ "items": [...] }` com até 16 posts.
 
-Exemplo de chamada:
-
-```bash
-curl -X POST http://localhost:8000/parse_prediction \
-  -H "Content-Type: application/json" \
-  -d '{
-        "post_text": "BTC breaking $80k before end of year!",
-        "post_created_at": "2025-08-25T12:00:00Z"
-      }'
-
-Alternativamente, visite http://localhost:8000/docs para testar os endpoints.
-```
+Visite http://localhost:8000/docs para testar os endpoints.
 
 As respostas são instâncias JSON de `ParsedPredictionResponse` contendo `target_type`, `extracted_value`, `timeframe`, `bear_bull` e `notes`.
 
 ## Geração de Predições
 
-Para preencher o banco com novos resultados do modelo, use o script de batching:
+Para preencher o banco com novos resultados do modelo, use o script:
 
 ```bash
 uv run python -m scripts.generate_predictions --batch-sizes 1 16
 ```
 
-O script percorre o dataset anotado em lotes, chama a API configurada (local ou remota) e insere cada resposta em `prediction_results` junto com metadados (`run_id`, `example_id`, tamanho do lote). O progresso é retomável via `--run-id`.
+O script percorre o dataset anotado em batches, chama a API configurada e insere cada resposta na tabela `prediction_results` do banco local.
 
 ## Avaliação
 
@@ -62,6 +51,8 @@ Recalcule métricas de acurácia, precisão, recall, F1, exact match (`timeframe
 ```bash
 uv run python -m scripts.calculate_metrics
 ```
+
+OBS: esse script computa métricas a partir do banco de dados local. Portanto, ele só irá funcionar após a execução do `generate_predictions.py`.
 
 ### Relatório de Custos
 
