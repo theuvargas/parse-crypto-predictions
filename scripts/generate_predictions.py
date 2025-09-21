@@ -7,7 +7,7 @@ import requests
 from requests import RequestException
 
 from src.models import ExtractedValueType, TargetType, Timeframe
-from src.database import init_db, log_predictions
+from src.database import init_db, latest_example_id, log_predictions
 
 DATASET_PATH = "data/annotated-dataset.json"
 API_BASE_URL = "http://localhost:8000"
@@ -16,11 +16,17 @@ API_BASE_URL = "http://localhost:8000"
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--batch_sizes",
+        "--batch-sizes",
         nargs="+",
         type=int,
         default=[1, 16],
         help="A list of batch sizes to evaluate.",
+    )
+    parser.add_argument(
+        "--run-id",
+        type=UUID,
+        default=None,
+        help="Existing run identifier to resume; defaults to a new UUID",
     )
     return parser.parse_args()
 
@@ -55,7 +61,7 @@ def fetch_predictions(endpoint: str, payload: Any) -> list[APIResponse]:
 
     url = f"{API_BASE_URL}/{endpoint}"
     try:
-        response = requests.post(url, json=payload, timeout=30)
+        response = requests.post(url, json=payload, timeout=300)
         response.raise_for_status()
     except RequestException as exc:
         raise RuntimeError(f"Request to {url} failed") from exc
@@ -86,14 +92,26 @@ def log_prediction_results(
 def main():
     init_db()
     args = parse_args()
+    run_id = args.run_id or uuid4()
 
     with open(DATASET_PATH) as f:
         dataset: list[DatasetEntry] = json.load(f)
 
     for batch_size in args.batch_sizes:
-        run_id = uuid4()
         endpoint = "parse_prediction_batch" if batch_size > 1 else "parse_prediction"
-        for i in range(0, len(dataset), batch_size):
+        last_example = latest_example_id(run_id, batch_size)
+        start_index = (last_example + 1) if last_example is not None else 0
+        if start_index >= len(dataset):
+            print(
+                f"Run {run_id} already processed all examples for batch size {batch_size}"
+            )
+            continue
+
+        print(
+            f"Processing run {run_id} batch size {batch_size} starting from example {start_index}"
+        )
+
+        for i in range(start_index, len(dataset), batch_size):
             print(f"Processing batch {i}...")
             batch = dataset[i : i + batch_size]
             input_batch = format_api_input(batch)
@@ -111,6 +129,8 @@ def main():
                 batch_size=batch_size,
                 predictions=predictions,
             )
+
+        print(f"Completed run {run_id} for batch size {batch_size}")
 
 
 if __name__ == "__main__":

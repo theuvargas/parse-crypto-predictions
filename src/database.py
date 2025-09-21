@@ -1,8 +1,9 @@
 from uuid import UUID
 import duckdb
 from pydantic_ai import RunUsage
-from .models import ParsedPredictionResponse
+
 from . import config
+from .models import ParsedPredictionResponse
 
 
 def init_db() -> None:
@@ -107,3 +108,24 @@ def log_predictions(
         [run_id, example_id, batch_id, batch_size, raw_prediction_json],
     )
     con.close()
+
+
+def latest_example_id(run_id: UUID, batch_size: int) -> int | None:
+    con = duckdb.connect(config.db_file)
+    try:
+        result = con.execute(
+            """
+            SELECT max(example_id)
+            FROM prediction_results
+            WHERE run_id = ? AND batch_size = ?
+            """,
+            [run_id, batch_size],
+        ).fetchone()
+    finally:
+        con.close()
+
+    if not result:
+        return None
+
+    last_example = result[0]
+    return int(last_example) if last_example is not None else None
