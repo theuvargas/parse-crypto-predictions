@@ -14,13 +14,15 @@ SELECT
     batch_size,
     COUNT(*) AS request_count,
     AVG(CAST(succeeded AS DOUBLE)) AS success_rate,
-    AVG(latency_ms) AS latency_mean,
-    percentile_cont(0.5) WITHIN GROUP (ORDER BY latency_ms) AS latency_p50,
-    percentile_cont(0.95) WITHIN GROUP (ORDER BY latency_ms) AS latency_p95,
+    AVG(latency_ms) / 1000.0 AS latency_mean,
+    percentile_cont(0.5) WITHIN GROUP (ORDER BY latency_ms) / 1000.0 AS latency_p50,
+    percentile_cont(0.95) WITHIN GROUP (ORDER BY latency_ms) / 1000.0 AS latency_p95,
     AVG(input_tokens) AS input_tokens_mean,
+    AVG(input_tokens * {INPUT_RATE}) AS input_cost_mean,
     percentile_cont(0.5) WITHIN GROUP (ORDER BY input_tokens * {INPUT_RATE}) AS input_cost_p50,
     percentile_cont(0.95) WITHIN GROUP (ORDER BY input_tokens * {INPUT_RATE}) AS input_cost_p95,
     AVG(output_tokens) AS output_tokens_mean,
+    AVG(output_tokens * {OUTPUT_RATE}) AS output_cost_mean,
     percentile_cont(0.5) WITHIN GROUP (ORDER BY output_tokens * {OUTPUT_RATE}) AS output_cost_p50,
     percentile_cont(0.95) WITHIN GROUP (ORDER BY output_tokens * {OUTPUT_RATE}) AS output_cost_p95
 FROM token_usage
@@ -39,9 +41,11 @@ class ReportRow:
     latency_p50: float | None
     latency_p95: float | None
     input_tokens_mean: float | None
+    input_cost_mean: float | None
     input_cost_p50: float | None
     input_cost_p95: float | None
     output_tokens_mean: float | None
+    output_cost_mean: float | None
     output_cost_p50: float | None
     output_cost_p95: float | None
 
@@ -75,13 +79,15 @@ def print_report(rows: list[ReportRow]) -> None:
         "batch",
         "requests",
         "success",
-        "lat_mean",
-        "lat_p50",
-        "lat_p95",
-        "in_mean",
+        "lat_mean_s",
+        "lat_p50_s",
+        "lat_p95_s",
+        "in_tokens",
+        "in_cost_mean",
         "in_cost_p50",
         "in_cost_p95",
-        "out_mean",
+        "out_tokens",
+        "out_cost_mean",
         "out_cost_p50",
         "out_cost_p95",
     ]
@@ -98,9 +104,11 @@ def print_report(rows: list[ReportRow]) -> None:
                 format_number(row.latency_p50),
                 format_number(row.latency_p95),
                 format_number(row.input_tokens_mean, digits=1),
+                format_number(row.input_cost_mean, digits=4),
                 format_number(row.input_cost_p50, digits=4),
                 format_number(row.input_cost_p95, digits=4),
                 format_number(row.output_tokens_mean, digits=1),
+                format_number(row.output_cost_mean, digits=4),
                 format_number(row.output_cost_p50, digits=4),
                 format_number(row.output_cost_p95, digits=4),
             ]
