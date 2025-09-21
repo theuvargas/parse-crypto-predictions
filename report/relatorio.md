@@ -12,7 +12,7 @@ Os dados abaixo são referentes são referentes à avaliação do agente de pars
 | F1 (`target_type`) | 71,38% | 92,32% |
 | `timeframe` (exact match) | 87,25% | 90,20% |
 | `extracted_value` (exact match) | 69,61% | 88,24% |
-| Spearman (`bear_bull`) | 0,91 | 0,87 |
+| Spearman (`bear_bull`) | 0,8679 | 0,8960 |
 | Sucesso | 100% | 100% |
 
 
