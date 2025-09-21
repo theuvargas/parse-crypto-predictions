@@ -37,17 +37,17 @@ Valores de custo consideram o preço atual do modelo utilizado, o **gemini-2.5-f
 
 | Métrica | Batch size 1 | Batch size 16 |
 | --- | --- | --- |
-| Lat. média (s) | 8,48 | 33,79 |
-| Lat. p50 (s) | 3,61 | 31,99 |
-| Lat. p95 (s) | 49,50 | 43,10 |
-| Tokens entrada (média) | 4657,1 | 5784,7 |
-| Tokens saída (média) | 495,2 | 5389,5 |
+| Lat. média (s) | 5,82 | 27,19 |
+| Lat. p50 (s) | 3,60 | 26,27 |
+| Lat. p95 (s) | 4,92 | 31,97 |
+| Tokens entrada (média) | 4679,7 | 5784,7 |
+| Tokens saída (média) | 492,4 | 4980,8 |
 | Custo entrada média (USD) | 0,0014 | 0,0017 |
 | Custo entrada p50 (USD) | 0,0014 | 0,0017 |
 | Custo entrada p95 (USD) | 0,0014 | 0,0018 |
-| Custo saída média (USD) | 0,0012 | 0,0135 |
-| Custo saída p50 (USD) | 0,0013 | 0,0137 |
-| Custo saída p95 (USD) | 0,0016 | 0,0140 |
+| Custo saída média (USD) | 0,0012 | 0,0125 |
+| Custo saída p50 (USD) | 0,0012 | 0,0129 |
+| Custo saída p95 (USD) | 0,0016 | 0,0141 |
 
 ### Observações
 
