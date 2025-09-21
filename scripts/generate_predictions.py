@@ -67,16 +67,6 @@ def fetch_predictions(endpoint: str, payload: Any) -> list[APIResponse]:
         return [data]
 
 
-def evaluate_predictions(true: list[DatasetEntry], predictions: list[APIResponse]):
-    """Calculate metrics for the variables.
-
-    - target_type, extracted_value, timeframe: accuracy, precision, recall, F1 score
-    - target_type: confusion matrix
-    - bear_bull: Spearman correlation
-    """
-    pass
-
-
 def log_prediction_results(
     run_id: UUID,
     batch_id: int,
@@ -104,6 +94,7 @@ def main():
         run_id = uuid4()
         endpoint = "parse_prediction_batch" if batch_size > 1 else "parse_prediction"
         for i in range(0, len(dataset), batch_size):
+            print(f"Processing batch {i}...")
             batch = dataset[i : i + batch_size]
             input_batch = format_api_input(batch)
 

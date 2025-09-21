@@ -1,3 +1,5 @@
+import asyncio
+from google.genai.errors import ClientError
 from pydantic_ai import Agent, RunUsage
 from . import config
 from .helpers import build_batch_prompt, build_single_prompt
@@ -166,17 +168,37 @@ batch_agent = Agent(
     model_settings=config.batch_agent_settings,
 )
 
+RATE_LIMIT_DELAY_SECONDS = 45
+MAX_RATE_LIMIT_RETRIES = 5
+
 
 async def run_agent(
     item: NaturalLanguagePrediction,
 ) -> tuple[ParsedPrediction, RunUsage]:
-    response = await agent.run(build_single_prompt(item))
-    return response.output, response.usage()
+    prompt = build_single_prompt(item)
+    for _ in range(MAX_RATE_LIMIT_RETRIES):
+        try:
+            response = await agent.run(prompt)
+            return response.output, response.usage()
+        except ClientError as exc:
+            if exc.code == 429 and (exc.status or "").upper() == "RESOURCE_EXHAUSTED":
+                await asyncio.sleep(RATE_LIMIT_DELAY_SECONDS)
+                continue
+            raise
+    raise RuntimeError("Exceeded retry attempts due to repeated rate limits")
 
 
 async def run_batch_agent(
     items: list[NaturalLanguagePrediction],
 ) -> tuple[list[ParsedPrediction], RunUsage]:
     prompt = build_batch_prompt(items)
-    response = await batch_agent.run(prompt)
-    return response.output, response.usage()
+    for _ in range(MAX_RATE_LIMIT_RETRIES):
+        try:
+            response = await batch_agent.run(prompt)
+            return response.output, response.usage()
+        except ClientError as exc:
+            if exc.code == 429 and (exc.status or "").upper() == "RESOURCE_EXHAUSTED":
+                await asyncio.sleep(RATE_LIMIT_DELAY_SECONDS)
+                continue
+            raise
+    raise RuntimeError("Exceeded retry attempts due to repeated rate limits")
