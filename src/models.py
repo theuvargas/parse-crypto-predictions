@@ -1,5 +1,5 @@
 from typing import Literal
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, field_validator, ConfigDict
 from datetime import datetime
 from pydantic_extra_types.currency_code import ISO4217
 
@@ -103,7 +103,30 @@ class ParsedPredictionResponse(BaseModel):
     notes: list[str]
 
 
+examples = {
+    "items": [
+        {
+            "post_text": "SOL will double once mainnet upgrade ships",
+            "post_created_at": "2025-02-14T08:15:00Z",
+        },
+        {
+            "post_text": "ETH stuck between $2.8k-$3.2k for the next month",
+            "post_created_at": "2025-02-14T09:45:00Z",
+        },
+        {
+            "post_text": "Expect XRP to slide 15% this quarter",
+            "post_created_at": "2025-02-14T10:05:00Z",
+        },
+        {
+            "post_text": "BTC will reach $80k before year end 🚀",
+            "post_created_at": "2025-01-05T12:00:00Z",
+        },
+    ]
+}
+
+
 class NaturalLanguagePrediction(BaseModel):
+    model_config = ConfigDict(json_schema_extra={"examples": [examples["items"][0]]})
     id: str | None = Field(
         default=None, description="Unique identifier for the prediction"
     )
@@ -112,6 +135,7 @@ class NaturalLanguagePrediction(BaseModel):
 
 
 class BatchPredictionRequest(BaseModel):
+    model_config = ConfigDict(json_schema_extra={"examples": [examples]})
     items: list[NaturalLanguagePrediction] = Field(
         default_factory=list,
         description="Collection of posts to parse in a single request",
