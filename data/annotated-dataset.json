@@ -400,7 +400,7 @@
   {
     "post_text": "ALGO dead coin. Maybe $0.05 if they're lucky",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "ALGO",
       "min": 0,
       "max": 0.05,
@@ -824,7 +824,7 @@
   {
     "post_text": "BTC will trade between 45k-55k throughout 2025",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "BTC",
       "min": 45000,
       "max": 55000,
@@ -845,7 +845,7 @@
   {
     "post_text": "ETH consolidation zone: $2800-$3200 next month",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "ETH",
       "min": 2800,
       "max": 3200,
@@ -867,7 +867,7 @@
   {
     "post_text": "Tom Lee just said he thinks Ethereum $ETH could hit $5,500 in the near term and end the year at $10,000-$12,000",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "ETH",
       "min": 10000,
       "max": 12000,
@@ -890,7 +890,7 @@
   {
     "post_text": "SOL gonna crab between $180-$220 until my ex stops liking my Instagram stories which could be anywhere from 3 days to 3 years",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "SOL",
       "min": 180,
       "max": 220,
@@ -912,7 +912,7 @@
   {
     "post_text": "ADA trapped in hell between $0.30-$0.45 forever or until Charles stops making videos about Africa whichever comes first lmao",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "ADA",
       "min": 0.3,
       "max": 0.45,
@@ -934,7 +934,7 @@
   {
     "post_text": "DOGE will oscillate between 0.08-0.32 cents following Elon's mood swings. When he's happy dogs pump when he's sad they dump it's science",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "DOGE",
       "min": 0.0008,
       "max": 0.0032,
@@ -956,7 +956,7 @@
   {
     "post_text": "LINK marines we're stuck in $6.50-$8.20 purgatory until the next bull run or until my wife understands what an oracle is (never)",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "LINK",
       "min": 6.5,
       "max": 8.2,
@@ -978,7 +978,7 @@
   {
     "post_text": "AVAX consolidating $24-$31 but only on Tuesdays when Mercury isn't in retrograde and my horoscope says buy the dip",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "AVAX",
       "min": 24,
       "max": 31,
@@ -1000,7 +1000,7 @@
   {
     "post_text": "XRP will chop between $0.45-$0.65 in this range until SEC guy gets tired of playing games or my pizza arrives whichever is sooner",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "XRP",
       "min": 0.45,
       "max": 0.65,
@@ -1022,7 +1022,7 @@
   {
     "post_text": "MATIC stuck between $0.70-$0.90 forever because polygon rhymes with gone and that's bearish energy ser ngmi if you hold",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "MATIC",
       "min": 0.7,
       "max": 0.9,
@@ -1044,7 +1044,7 @@
   {
     "post_text": "UNI dancing between $4.80-$6.20 until DeFi summer 2.0 hits or my mom stops asking if I won the lottery yet (spoiler: I didn't)",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "UNI",
       "min": 4.8,
       "max": 6.2,
@@ -1066,7 +1066,7 @@
   {
     "post_text": "DOT gonna sideways crab $4.10-$5.90 because my magic 8 ball said 'reply hazy try again' and that's basically range bound advice",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "DOT",
       "min": 4.1,
       "max": 5.9,
@@ -1088,7 +1088,7 @@
   {
     "post_text": "ATOM trapped between $7.80-$10.20 in the cosmos void until IBC actually does something or heat death of universe",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "ATOM",
       "min": 7.8,
       "max": 10.2,
@@ -1110,7 +1110,7 @@
   {
     "post_text": "ALGO range bound $0.12-$0.18 until they fix their tokenomics or my therapist says I'm cured of hopium addiction",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "ALGO",
       "min": 0.12,
       "max": 0.18,
@@ -1132,7 +1132,7 @@
   {
     "post_text": "FTM oscillating $0.25-$0.40 like a ghost that can't decide if it wants to haunt this portfolio or move on to crypto heaven",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "FTM",
       "min": 0.25,
       "max": 0.4,
@@ -1154,7 +1154,7 @@
   {
     "post_text": "NEAR chopping between $1.20-$1.80 until they rebrand to FAR or my landlord accepts crypto rent payments (he won't)",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "NEAR",
       "min": 1.2,
       "max": 1.8,
@@ -1176,7 +1176,7 @@
   {
     "post_text": "LTC grinding between $68-$88 because it's digital silver but silver is boring and Charlie Lee sold the top that one time",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "LTC",
       "min": 68,
       "max": 88,
@@ -1198,7 +1198,7 @@
   {
     "post_text": "SOL gonna crab between $180-$220 until my ex stops liking my Instagram stories which should be by Valentine's Day 2025 hopefully",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "SOL",
       "min": 180,
       "max": 220,
@@ -1220,7 +1220,7 @@
   {
     "post_text": "DOGE will oscillate between 0.08-0.32 cents following Elon's mood swings throughout Q2 2025 when Tesla earnings come out",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "DOGE",
       "min": 0.0008,
       "max": 0.0032,
@@ -1242,7 +1242,7 @@
   {
     "post_text": "XRP will chop between $0.45-$0.65 until the SEC case resolves by end of summer 2025 or my pizza arrives whichever is sooner",
     "target_type": "range",
-    "extracted_range": {
+    "extracted_value": {
       "asset": "XRP",
       "min": 0.45,
       "max": 0.65,
