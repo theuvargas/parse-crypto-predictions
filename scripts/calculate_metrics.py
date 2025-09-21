@@ -19,18 +19,18 @@ from src.models import ParsedPredictionResponse
 
 @dataclass
 class AlignedExample:
-    example_id: int
+    prediction_id: str
     prediction: ParsedPredictionResponse
     annotation: ParsedPredictionResponse
 
 
-def load_annotations() -> dict[int, ParsedPredictionResponse]:
+def load_annotations() -> dict[str, ParsedPredictionResponse]:
     with open(config.dataset_file) as f:
         dataset = json.load(f)
 
     annotations = {}
     for entry in dataset:
-        annotations[entry["id"]] = ParsedPredictionResponse.model_validate(
+        annotations[str(entry["id"])] = ParsedPredictionResponse.model_validate(
             {
                 "target_type": entry["target_type"],
                 "extracted_value": entry.get("extracted_value"),
@@ -44,13 +44,13 @@ def load_annotations() -> dict[int, ParsedPredictionResponse]:
 
 
 def fetch_predictions() -> dict[
-    tuple[str, int], list[tuple[int, ParsedPredictionResponse]]
+    tuple[str, int], list[tuple[str, ParsedPredictionResponse]]
 ]:
     connection = duckdb.connect(config.db_file, read_only=True)
     try:
         rows = connection.execute(
             """
-            SELECT run_id, batch_size, example_id, raw_prediction_json
+            SELECT run_id, batch_size, example_id, prediction_id, raw_prediction_json
             FROM prediction_results
             ORDER BY run_id, batch_size, example_id
             """
@@ -59,27 +59,40 @@ def fetch_predictions() -> dict[
         connection.close()
 
     grouped = defaultdict(list)
-    for run_id, batch_size, example_id, raw_prediction_json in rows:
-        payload = json.loads(raw_prediction_json)
+    for run_id, batch_size, example_id, prediction_id, raw_prediction_json in rows:
+        if isinstance(raw_prediction_json, str):
+            payload = json.loads(raw_prediction_json)
+        else:
+            payload = raw_prediction_json
         prediction = ParsedPredictionResponse.model_validate(payload)
-        grouped[(str(run_id), batch_size)].append((int(example_id), prediction))
+        resolved_id = (
+            prediction.id
+            or prediction_id
+            or payload.get("id")
+            or str(example_id)
+        )
+        grouped[(str(run_id), batch_size)].append((str(resolved_id), prediction))
 
     return grouped
 
 
 def align_predictions(
-    predictions: dict[tuple[str, int], list[tuple[int, ParsedPredictionResponse]]],
-    annotations: dict[int, ParsedPredictionResponse],
+    predictions: dict[tuple[str, int], list[tuple[str, ParsedPredictionResponse]]],
+    annotations: dict[str, ParsedPredictionResponse],
 ) -> dict[tuple[str, int], list[AlignedExample]]:
     aligned = {}
     for key, items in predictions.items():
         aligned[key] = []
-        for example_id, prediction in items:
-            annotation = annotations[example_id]
+        for prediction_id, prediction in items:
+            annotation = annotations.get(prediction_id)
+            if annotation is None:
+                raise KeyError(
+                    f"No annotation found for prediction id {prediction_id}"
+                )
 
             aligned[key].append(
                 AlignedExample(
-                    example_id=example_id,
+                    prediction_id=prediction_id,
                     prediction=prediction,
                     annotation=annotation,
                 )

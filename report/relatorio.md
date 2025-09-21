@@ -6,14 +6,14 @@ Os dados abaixo são referentes são referentes à avaliação do agente de pars
 
 | Métrica | Batch size 1 | Batch size 16 |
 | --- | --- | --- |
-| Acurácia (`target_type`) | 77,45% | 20,59% |
-| Precisão (`target_type`) | 85,30% | 20.54% |
-| Recall (`target_type`) | 77,79% | 20.50% |
-| F1 (`target_type`) | 78,88% | 20.35% |
-| `timeframe` (exact match) | 87,25% | 57.84% |
-| `extracted_value` (exact match) | 76,47% | 7.84% |
-| Spearman (`bear_bull`) | 0,91 | 0,11 |
-| Sucesso | 100% | 100,0% |
+| Acurácia (`target_type`) | 69,61% | 92,16% |
+| Precisão (`target_type`) | 86,42% | 92,28% |
+| Recall (`target_type`) | 68,66% | 93,55% |
+| F1 (`target_type`) | 71,38% | 92,32% |
+| `timeframe` (exact match) | 87,25% | 90,20% |
+| `extracted_value` (exact match) | 69,61% | 88,24% |
+| Spearman (`bear_bull`) | 0,91 | 0,87 |
+| Sucesso | 100% | 100% |
 
 
 ### Matrizes de Confusão (`target_type`)
@@ -27,7 +27,8 @@ Os dados abaixo são referentes são referentes à avaliação do agente de pars
 
 - As métricas de exact match de `timeframe` e `extracted_value` medem a quantidade de vezes em que **todos** os campos dessas extrações são iguais às referências. Por exemplo, para o `timeframe` contar como um acerto, é preciso que `explicit`, `start` e `end` estejam corretos ao mesmo tempo.
 - Se o modelo errar a classe, não é possível acertar o `extracted_value`
-- O agente com batch_size=16 se saiu consideravelmente pior do que o com batch_size=1, o que era esperado. É muito mais difícil classificar 16 amostras ao mesmo tempo do que 1.
+- O agente com batch_size=16 se saiu consideravelmente melhor do que o com batch_size=1, o que considero inesperado, já que com um batch size maior, o agente deve classificar mais amostras ao mesmo tempo.
+- O sucesso do agente com batch size maior talvez se deva ao maior thinking budget concedido: 4000 contra 500 do agente com batch size 1. Dei um thinking budget maior para o caso com mais inputs para compensar a entrada maior.
 - Sucesso 100% quer dizer que o modelo não errou nenhuma vez o modelo (tipagem) de saída.
 
 ## Relatório de Custos
@@ -51,3 +52,4 @@ Valores de custo consideram o preço atual do modelo utilizado, o **gemini-2.5-f
 ### Observações
 
 - A latência média alta pode ser explicada pelo rate limiting da API do Gemini. Eu estou usando uma chave gratuita, o que implica em limites maiores. Cada vez que eu era limitado, esperava 45 segundos para tentar de novo. Considere o p50 como uma métrica mais realista.
+- As estatistícas para batch_size=16 talvez pudessem ser normalizadas pelo tamanho do batch, para encontrar um custo por entrada, e a comparação ser mais justa contra o batch_size=1.

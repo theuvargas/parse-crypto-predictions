@@ -52,7 +52,7 @@ async def parse_prediction(
         latency_ms=elapsed_ms,
         succeeded=True,
     )
-    return to_response(parsed)
+    return to_response(parsed, prediction_id=input.id)
 
 
 @app.post("/parse_prediction_batch", response_model=list[ParsedPredictionResponse])
@@ -94,7 +94,10 @@ async def parse_prediction_batch(
             "Batch parsing returned a different number of predictions than inputs"
         )
 
-    return [to_response(item) for item in parsed_list]
+    return [
+        to_response(parsed_item, prediction_id=source_item.id)
+        for parsed_item, source_item in zip(parsed_list, request.items)
+    ]
 
 
 def main() -> None:

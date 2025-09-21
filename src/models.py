@@ -93,6 +93,9 @@ ExtractedValueType = TargetPrice | PercentageChange | Range | Ranking | None
 class ParsedPredictionResponse(BaseModel):
     """Response returned by the FastAPI endpoint"""
 
+    id: str | None = Field(
+        default=None, description="Unique identifier for the source prediction"
+    )
     target_type: TargetType
     extracted_value: ExtractedValueType
     bear_bull: int
@@ -101,6 +104,9 @@ class ParsedPredictionResponse(BaseModel):
 
 
 class NaturalLanguagePrediction(BaseModel):
+    id: str | None = Field(
+        default=None, description="Unique identifier for the prediction"
+    )
     post_text: str = Field(description="The text of the post")
     post_created_at: datetime = Field(description="Creation date of the post")
 

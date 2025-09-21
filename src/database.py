@@ -1,3 +1,5 @@
+from collections.abc import Mapping
+from typing import Any
 from uuid import UUID
 import duckdb
 from pydantic_ai import RunUsage
@@ -35,6 +37,7 @@ def init_db() -> None:
             example_id INTEGER,
             batch_id int,
             batch_size INTEGER,
+            prediction_id VARCHAR,
             created_at TIMESTAMP DEFAULT now(),
             raw_prediction_json JSON
         );
@@ -91,8 +94,14 @@ def log_predictions(
     example_id: int,
     batch_id: int,
     batch_size: int,
-    raw_prediction_json: ParsedPredictionResponse,
+    raw_prediction_json: ParsedPredictionResponse | Mapping[str, Any],
 ) -> None:
+    if isinstance(raw_prediction_json, ParsedPredictionResponse):
+        payload = raw_prediction_json.model_dump(mode="json")
+    else:
+        payload = dict(raw_prediction_json)
+    prediction_id = payload.get("id")
+
     con = duckdb.connect(config.db_file)
     con.execute(
         """
@@ -101,11 +110,12 @@ def log_predictions(
             example_id,
             batch_id,
             batch_size,
+            prediction_id,
             raw_prediction_json
         )
-        VALUES (?, ?, ?, ?, ?)
+        VALUES (?, ?, ?, ?, ?, ?)
         """,
-        [run_id, example_id, batch_id, batch_size, raw_prediction_json],
+        [run_id, example_id, batch_id, batch_size, prediction_id, payload],
     )
     con.close()
 

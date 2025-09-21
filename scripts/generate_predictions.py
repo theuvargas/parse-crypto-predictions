@@ -43,6 +43,7 @@ class DatasetEntry(TypedDict):
 
 
 class APIResponse(TypedDict):
+    id: str | None
     target_type: TargetType
     extracted_value: ExtractedValueType
     bear_bull: int
@@ -52,7 +53,11 @@ class APIResponse(TypedDict):
 
 def format_api_input(batch: list[DatasetEntry]) -> list[dict]:
     return [
-        {"post_text": item["post_text"], "post_created_at": item["post_created_at"]}
+        {
+            "id": str(item["id"]),
+            "post_text": item["post_text"],
+            "post_created_at": item["post_created_at"],
+        }
         for item in batch
     ]
 

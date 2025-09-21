@@ -46,8 +46,11 @@ def infer_target_type(parsed: ParsedPrediction) -> TargetType:
     return "none"
 
 
-def to_response(parsed: ParsedPrediction) -> ParsedPredictionResponse:
+def to_response(
+    parsed: ParsedPrediction, prediction_id: str | None = None
+) -> ParsedPredictionResponse:
     return ParsedPredictionResponse(
+        id=str(prediction_id) if prediction_id is not None else None,
         target_type=infer_target_type(parsed),
         extracted_value=parsed.extracted_value,
         bear_bull=parsed.bear_bull,
