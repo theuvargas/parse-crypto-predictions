@@ -39,6 +39,7 @@ class DatasetEntry(TypedDict):
     bear_bull: int
     timeframe: Timeframe
     notes: list[str]
+    id: int
 
 
 class APIResponse(TypedDict):

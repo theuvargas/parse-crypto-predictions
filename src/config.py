@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 db_file = "crypto_predictions.db"
+dataset_file = "data/annotated-dataset.json"
 model_name = "gemini-2.5-flash"
 
 agent_settings = GoogleModelSettings(
