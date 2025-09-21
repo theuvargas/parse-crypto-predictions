@@ -73,8 +73,9 @@ uv run python -m scripts.cost_report
 
 ## Relatórios
 
-- **Performance e Custos:** `report/relatorio.md` resume métricas atuais e inclui as imagens das matrizes de confusão.
-- **Matrizes de Confusão:** `report/confusion_matrix/batch-size-1.png` e `.../batch-size-16.png`.
+- [Performance e Custos](https://github.com/theuvargas/parse-crypto-predictions/blob/main/report/relatorio.md)
+- [Decisões tomadas](https://github.com/theuvargas/parse-crypto-predictions/blob/main/report/decisoes.md)
+- [Tricky cases](https://github.com/theuvargas/parse-crypto-predictions/blob/main/report/tricky_cases.md)
 
 ## Estrutura Principal
 
