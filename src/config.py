@@ -14,7 +14,7 @@ agent_settings = GoogleModelSettings(
 )
 
 batch_agent_settings = GoogleModelSettings(
-    temperature=0.3, google_thinking_config={"thinking_budget": 1000}
+    temperature=0.3, google_thinking_config={"thinking_budget": 4000}
 )
 
 model = GoogleModel(config.model_name)
